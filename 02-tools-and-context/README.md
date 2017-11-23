@@ -1,146 +1,123 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 02: Tools and Context
-=====================================
+===
 
+# Daily Plan
 
-## Learning Objectives
-* Students will be able to define npm scripts for automating command line tasks
+* Notes: 
+  - Top of mind questions?
+  - What do you want to impact when you grow up?
+* Code Review
+* Scripts and Tools with package.json
+* Context vs Scope
+* `this` keyword
+  * Call & Apply
+* Lab Preview
+
+# Learning Objectives
+* Students will understand the difference between context and scope
 * Students will be able to control a functions context using call, apply, and bind
-* Studnets will be able to handle thrown errors using try and catch 
-* Students will be able to interperate the diffent types of errors in Javascript
+* Students will be able to handle thrown errors using try and catch 
+* Understand the role context plays in constructor functions
+* Students will be able to define npm scripts for automating command line tasks
 
-## Resources 
-* Read [about package.json]
-* Skim [npm scripts as build tools]
-* Skim [npm scripts docs]
-* Read [semver](http://semver.org/)
-* Read [node error docs]
-* Read [mdn this]
-* Watch [javascript context tutorial]
+# Resources
+### Package.json
+* Read [About package.json](https://docs.npmjs.com/files/package.json)
 
-## package.json
-The `package.json` file is used to descibe and configure a NodeJS package. The only two fields that are required by a package.json are `name` and `version`. If a package has external dependieces they are list by name and version under the fields `dependencies` and `devDependencies`. If the package depenends on an extenral package to run the external package should be listed under `dependencies`. If the external package is only needed in development (like a testing framework) it should be listend under `devDependencies`. package.json files can have a `scripts` field where keys can be associated with unix commands. npm scripts have the added benifit that they can run any command line utility (CLI) defined in a dependencie, without globally installing the CLI on you opperating system. 
+### NPM Scripts
+* Skim [NPM scripts as build tools](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
+* Skim [NPM scripts docs](https://docs.npmjs.com/misc/scripts)
+* Skim [semver](http://semver.org/)
 
-#### Semantic Versioning
-The NodeJS/NPM community follows semantic versioning (semver). Semantic vesrsioning describes how to manage version changes to a software product. Semver formats the vesrion number using `MAJOR.MINOR.PATCH`. You should change a MAJOR version when you make incompatible API changes, a MINOR version when you add functionality in a backwards-compatible manner, or a PATCH version when you make backwards-compatible bug fixes.
+### Context
+* Read [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+* Watch [Javascript context tutorial](https://www.youtube.com/watch?v=fjJoX9F_F5g)
 
-## Errors
-Error messages are super important tools for debugging broken code. Javascript has many built in error messages, but you can also define your own errors in your programs. Its important to not to forget that errors will happen in production. Error logs are kept in order to fix bugs in prodctions. Writing good error messages is critical for finding and fixing bugs in deployed applications. 
+### Prototype
+* Read [MDN inheritance and the prototype chain]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+* Skim [MDN New](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
+* Skim [MDN object prototype]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 
-#### Writing good error messages
-A great error message should have the following features
-* a timestamp so that a timeline of the error can be made
-* a message about the problem that occured
-* a message about the cause of the problem
-* a consistent format (so that it can be parsed and searched)
-* a severity level (low, med high) or (0 - 10)
+### Errors
+* Read [Node error docs](https://nodejs.org/dist/latest-v6.x/docs/api/errors.html)
 
-``` javascript
-// creating a smart error
-class Bug extends Error {
-  constructor({problem, cause, level=0, timestamp=new Date().toISOString()}){
-    super(`__ERROR__ ${problem}: ${cause} (LEVEL ${level}) (TIMESTAMP ${timestamp})`)
-    this.problem = problem
-    this.cause = cause
-    this.level = level
-    this.timestamp = timestamp
-  }
-}
 
-let error = new Bug({problem: 'cannot create user', cause: 'requires password'})
-```
+# package.json
+* A `package.json` is a config file used for configuring metadata about a node module.
+* It only requires a name and version field, but a typical package.json has much more information.
+* Dependencies and Dev-dependencies
+  * Dependencies : a list of packages required to run the main program
+  * Dev-dependencies : a list of packages required to develop the module
+* NPM scripts are used to manage common tasks for working a node project  
+* Setting up a project checklist
+  * Create a new directory named after your project
+  * Navigate inside your directory
+  * Run `npm init` and answer the questions
+  * Now you should find a `package.json` inside your current directory :)
 
-#### Handling Thrown Errors
-Javascript functions can throw errors. Throwing errors is a great way to force developers to use a function correctly, because unhandled errors will crash javascript and stop progam execution. The is a saying to describe this "Fail Fast". The idea is the sooner the code fails the sooner a developer will find their bugs and fix them. Though throwing errors is a useful feature of the langauge, programs like servers need a way to continue running inspite of bugs in the code. Javascript has a `try {} catch (error) {}` syntax for handling ths. 
-``` javascript 
-let userInput = '{'
-try {
- let data = JSON.parse(userInput)
- // do something with data
-} catch(e) {
-  console.error(e)
-}
-```
+# Context vs Scope
+* Every function invocation has both a scope and a context associated with it. 
+* Scope is function-based while context is object-based. 
+* Scope pertains to the variable access of a function when it is invoked and is unique to each invocation. 
+* Context is always the value of the `this` keyword which is a reference to the object that “owns” the currently executing code.
 
-#### Error Cheat Sheet
-| Type |  Reason |
-| --- | --- | 
-| Error | generic error |
-| ReferenceError | an attempt was made to access a variable that is not defiend |
-| SyntaxError | the javascript is not valid |
-| TypeError | a provided argument was no the allowable type |
-| SystemError | a NodeJS error that occurs when a system error has occured | 
 
-###### System Error Cheat Sheet 
-* `EACCESS` - an attempt to access a file without the right permissions
-* `EADDRINUSE` - an attempt to start a server on a PORT that is already in use
-* `ECONNREFUSED` - a connection was deliberately refused by the target machine
-* `ECONNRESET` - a connection was forcibly closed by a peer
-* `EEXIST` - a file exists and the attempted action required that it didn't
-* `EISDIR` - an action expected to act on a file but found a directory
-* `EMFILE` - too many files were open for your operating system to handle
-* `ENOENT` - an action expected a file, but did not find one
-* `ENOTDIR` - an action expected a directory, but found something else
-* `ENOTEMPTY` - an action expected an empty directory, but found one with data in it
-* `EPERM` - an attempt to do something that you currently don't have permissions to do
-* `EPIPE` - an attempt to write data to a connection that had been closed
+# Node Errors
+## Error
+* a generic error
+* `.stack` - a **String**. Describes the point in the code where the `Error` was instantiated
+* `.message` - a **String**. Description set by calling the `new Error(message)`  
 
-## Context 
-By default when a Javascript function belongs to an object, it is called a method. The object the method belongs to is called the methods **context**. In a function the keyword `this` points to the it's context. 
+## ReferenceError
+* Indicates that an attempt is being made to access a variable that is not defined
+* `ReferenceError` is a subclass of `Error`  
 
-A functions context can be reassigned using the function methods `call`, `apply` and `bind`. Arrow functions inherit their parrent context, and cannot use call, apply, and bind.
+## SyntaxError
+* indicates a program is not valid javascript
+* `SyntaxError` is a subclass of `Error`  
 
-#### Call 
-`call` is a function method that invokes the function with a specified context and comma seporated arguments
-  
-``` javascript
-Array.prototype.reduce.call('hello world', (result, char) => result + char.toUpperCase(), '') 
-```
-#### Apply 
-`apply` is a function method that invokes the function with a specified context and an array of arguments
+## TypeError
+* indicates that a provided argument is not an allowable type
+* `TypeError` is a subclass of `Error`    
 
-``` javascript
-let args = [(result, char) => result + char.toUpperCase(), '']
-Array.prototype.reduce.apply('hello world', args) 
-```
-#### Bind 
-`bind` is a function method that returns a new function with specified conttext and comma seporated default args
-``` javascript
-// define a generic dom mutation function
-function childrenSet(...children){
-  this.innerHTML = children.join(' ')
-}
+## SystemError
+* `.code` - A **String** describing the error code
+* `.errno` - A **Number** describing the error code
+* `.syscall` - A **String** describing the syscall that failed
+* `SystemError` is **not** a subclass of `Error`
+* Common System Errors
+ * `EACCESS` - An attempt to access a file without the right permissions
+ * `EADDRINUSE` - An attempt to start a server on a PORT that is already in use
+ * `ECONNREFUSED` - A connection was deliberately refused by the target machine
+ * `ECONNRESET` - A connection was forcibly closed by a peer
+ * `EEXIST` - A file exists and the attempted action required that it didn't
+ * `EISDIR` - An action expected to act on a file but found a directory
+ * `EMFILE` - To many files were open for your operating system to handle
+ * `ENOENT` - An action expected a file, but did not find one
+ * `ENOTDIR` - An action expected a directory, but found something else
+ * `ENOTEMPTY` - An action expected an empty directory, but found one with data in it
+ * `EPERM` - An attempt to do something that you currently don't have permissions to do
+ * `EPIPE` - An attempt to write data to a connection that had been closed
 
-// reset the dom using childrenSet and call
-childrenSet.call(document.body, '<div id="logo"></div>', '<div id="warning"></div>')
+# Throw Try Catch
+* If an un handled error is thrown in javascript the program will crash
+* try catch blocks allow you to safely throw a an error and handle it
 
-// create dom mutation helpers using bind 
-const bodyClear = childrenSet.bind(document.body)
-const logoGet = () => document.getElementById('logo')
-const warningGet = () => document.getElementById('warning')
-const logoSet = childrenSet.bind(logoGet(), 'code fellows')
-const warningSet = childrenSet.bind(warningGet(), 'WARNING:')
+# Pass by reference vs Pass by value
+* Objects are passed by reference
+* Strings, Numbers, Bools, undefined, and null are passed by value
 
-// use the dom mutation helpers
-logoSet()
-warningSet('password is required')
-
-logoGet().addEventListener('click', () => {
-  bodyClear()
-})
-
-warningGet().addEventListener('click', () => {
-  warningSet('the sky is falling')
-})
-```
-
-<!--links -->
-[node error docs]: https://nodejs.org/dist/latest-v6.x/docs/api/errors.html
-[about package.json]: https://docs.npmjs.com/files/package.json
-[npm scripts as build tools]: https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
-[npm scripts docs]: https://docs.npmjs.com/misc/scripts
-[mdn new]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
-
-[mdn object prototype]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
-[mdn inheritance and the prototype chain]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
-[mdn this]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
-[Javascript Context Tutorial]: https://www.youtube.com/watch?v=fjJoX9F_F5g
+# Call, Bind, Apply
+* when a function has a `this` we say that `this` is the functions context
+* unlike scope a functions context can be configured
+* If a function is not a property on an object, by default it has no context
+* If a function is a property on an object, by default that object is the context for that function
+* `call`, `bind`, and `apply` are function prototype methods that allow us to change the context of a function
+* `call` is a methods on a function that invokes a function with a specified context and arguments  
+ * `call` passes comma separated arguments
+* `apply` is a methods on a function that invokes a function with a specified context and arguments  
+ * `apply` passes arguments from an array  
+* don't mess with `__proto__` its slow **not even to read a property**
+* if you want to determine an objects prototype use `Object.getPrototypeOf(someObject)`
+* don't nest a lot of prototype's it will have a speed impact on your code
+* if you look up a property that is not on any object on the prototype chain it will still look through the whole prototype chain

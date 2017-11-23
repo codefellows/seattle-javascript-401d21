@@ -1,53 +1,133 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
-=====================================
+![cf](http://i.imgur.com/7v5ASc8.png) 01 : Node Ecosystem
+===
 
-## Learning Objectives
-* Students will be able to set up a NodeJS Package using npm
-* Students will be able to write commonjs modules
-* Students will be able to to write unit tests for syncronous Javascript code.
-* Students will be able to use to test driven development methodologies
+# Daily Plan
+* Intros
+* Class overview 
+  - What are we going to do over the next ten weeks?
+  - What are we covering this week? Today?
+* Workspace discussion... how organized are you?
+* Node.js / NPM Intro/Review
+* Test Driven Development
+  - Writing basic assertions
+  - Jest as a test runner
+* Node.js Modules
+  - Running scripts
+  - Creating modules
+  - Working with exports
+* Lab Process Overview
+* Lab Assignment Preview
 
-## Resources 
-* Read [about nodejs]
-* Skim [libuv docs]
-* Skim [about v8]
-* Read [what is npm]
-* Read [just another guide to ES6]
-* Skim [node and es6 docs]
-* Read [a gentle intro to tdd in js]
-* Read [expect docs](http://chaijs.com/api/bdd/)
-* Read [mocha getting started guide]
+# Learning Objectives
+* Students will be able to set up a node project
+* Students will be able to create node modules that conform to the CommonJS module pattern
+* Students will be able to construct and run unit tests
+* Students will be able explain the TDD philosophy of red, green, refactor
 
-## Use Your Computer Like A Developer
-It's time to unlearn any bad computer usage habbits, you may have developed in you pre-programmer years. It is critical that you keep your file system organized. Writing code is dificult enough, so dont allow your problem to be finding your code on the file system. You should also come up with a system for naming your files, and never deviate from it!!! Keep all of your projects in one place, and allways use version control. Use best git pratices even when you are working on personal projects! Use the command line when ever posible, in the long run it will save you many hours of time. 
+# Resources
+### Node.js
+* Read [About Node]
+* Skim [libuv Docs]
+* Skim [About V8]
 
-#### File Naming Tips
-Name all of your files with cabob-case ("-" separated words). Don't use uppercase letters unless you want the file to appear first when you run `ls`. In git projects it is standard to capitalize README.md for this reason.
+### ES6 
+* Read [Just Another Guide to ES6]
+* Skim [Node and ES6]
 
-## NodeJS
-NodeJS is an open source framework for writing javascript on your operating system. Node is compromised of the **V8** Javascript runtime, and the **NodeAPIs**. V8 suports many features in the lastest version of Javascript called ES6 (or ES2015) which has added many new syntax features and optimizations. V8 is the Javascript runtime developed for the Chrome browser, and is written in C and C++. The Node APIs are writtend in C, C++, and Javascript. Node was developed to enabled developers to easily write code with asynchronous input and output (IO). In many other langauges asyncronous IO creates a lot of work for developers, and can be error prone. Node uses an event loop driven non-blocking architecture, that enables node to have a very low overhead when it is not running. Node has an increadibly rich ecosystem of packages available through the Node Package Manager (NPM). 
+### NPM 
+* Read [What is NPM]
 
-## CommonJS modules
-NodeJS supports commonjs modules, enabling developers to organize their code into small files that define specific functionality. This plays a huge role in allowing Javascript developers to build large scale applications. In a commonjs module anything that is assigned to `module.exports` can be accessable to other modules module through invoking the `require`  function. The require expects a relative or absolute path to the module being imported, like `require('./relative/path/to/the/module.js')`. CommonJS modules can not be co-dependent, meaning that if module "A" requires module "B" then "B" can not also require "A".
+### Testing 
+* Read [A Gentle Intro to TDD in JS]
+* Read [expect docs](https://github.com/mjackson/expect)
+* Read [Getting Started with JEST]
 
-## Test Driven Development
-Test driven development (TDD) is a methodology for writing code. TDD relies on a very short development cycle, this means that it expects developers to create small testable features. TDD can speed up development time, validate the integrity of new code, and help developers understand their goals. TDD is brokend down into three steps called `red`, `green`, and `refactor`.
 
-###### RED
-Make a plan for the code that needs to be written, in order to solve your goal. Write tests that will run that code and check for expected behaviors. At this point if you run your tests, they should fail (red).
+# Setting up a development workspace 
+* Before people are developers they often development many habits of computer usage they will need to unlearn
+* It is highly important that as a developer people keep there file system organized
+* If your problem is finding your code, you are in deep trouble!
+* Students should set up a directory for all there class work and never deviate from working outside of this dir
+* Create a directory structure for keeping track of you class work
+ * **Never put space bars in your file names**
+ * **Use `-` or `_` instead. But choose one and stick with it... don't use both!**
+ * **Never use capital letters in your filenames, unless its convention (like README.md)**
+   * some file systems (like osx) don't keep track of Case and will cause git issues
 
-###### GREEN
-Write code to pass the specifcations of your tests, without making it perfect. If you succeed, when you run your tests they should pass (green) 
+## Sample Structure
+``` text
+ * $HOME/
+  | - Desktop/
+  | - Downloads/
+  | - ...
+  | - cf-401/
+  |   | - labs/
+  |   |   | - lab-01-node-echosystem
+  |   |   | - lab-02-tools-and-context
+  |   |   | - ...
+  |   | - lecture-notes/
+  |   |   | - class-01-node-ecosystem
+  |   |   | - class-02-tools-and-context
+  |   |   | - ...
+  ```
+# Node.JS
+* Node is an asynchronous event driven framework, for programming in javascript on your operating system!
+* Node only does work when events are triggered.
+* When Node has no work to be do Node sleeps
+* Node input and output (I/O) is non-blocking
+⋅* This save developers from having to worry about complicated concurrent programming patterns!
+* Node is composed of four main components
+⋅* Node Javascript API - The Javascript interface to all the cool C++ APIs
+⋅* V8 - a javascript runtime
+⋅* libuv - a c library for async io (for the operating system)
+⋅* Node C++ APIs - the glue between Node's Javascript APIs and libuv
+* Node has great documentation online, but make sure you read the docs for the version of node your using
+* Nodes documentation has a stability index
+ * 0 - deprecated - don't use the feature
+ * 1 - Experimental - don't use this feature in something you care about
+ * 2 - Stable - fine to use
+ * 3 - Locked - fine to use
 
-###### REFACTOR
-Refactor your code for speed, memory optimization, and most important **readability**. Your tests should still pass after this step.
+# NPM
+* NPM is a package manager for installing javascript libraries
+* NPM is composed of the following
+ * A registry where all the packages are hosted
+ * A search engine where you can find packages
+ * A CLI where that helps you interface with the registry
+ * A for profit organization
+
+# Testing and TDD
+* TDD is a software development process
+* It relies on a very short development cycle
+ * It encourages to build small things at a time
+* TDD Process
+ * you make a plan for the features needed to make a program work
+ * you choose a feature to implement
+ * you write code that tests that features behavior
+ * the tests now should fail, because the feature has not been implemented
+ * you write the feature it self
+ * the tests now should pass, because the feature has been implemented
+ * you refactor you code to optimize it
+ * the tests should still pass, because the behavior should not have changed
+* This is process is called RED GREEN REFACTOR
+ * RED - the test is written, but fail
+ * GREEN - the test pass because the feature is implemented
+ * REFACTOR - the code runs better, and the test still pass
+
+## Jest and Expect
+* Jest is a testing framework
+ * Its job is to facilitate writing and running test
+* Expect is an assertion library
+ * Its job facilitate writing expectations and then throw errors when the expectations are not met
 
 <!--links -->
-[about nodejs]: https://nodejs.org/en/about/
-[node and es6 docs]: https://nodejs.org/en/docs/es6/
-[libuv docs]: https://github.com/libuv/libuv
-[about v8]: https://developers.google.com/v8/
-[what is npm]: https://docs.npmjs.com/getting-started/what-is-npm
-[a gentle intro to tdd in js]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
-[mocha getting started guide]: http://mochajs.org/#getting-started
-[just another guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin
+[About Node]: https://nodejs.org/en/about/
+[libuv Docs]: https://github.com/libuv/libuv
+[About V8]: https://developers.google.com/v8/
+
+[Just Another Guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin
+[Node and ES6]: https://nodejs.org/en/docs/es6/
+
+[What is NPM]: https://docs.npmjs.com/getting-started/what-is-npm
+[A Gentle Intro to TDD in JS]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
+[Getting Starting with JEST]: https://facebook.github.io/jest/docs/en/getting-started.html#content
