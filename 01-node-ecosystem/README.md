@@ -100,14 +100,27 @@ Before people are developers, they often develop many habits they will need to u
   * A for profit organization.
 
 ## CommonJS modules
+* Modules are used to break down applications into smaller pieces.
+* Why are modules useful?
+  * The common `<script src=""></script>` pattern used to work with JavaScript loads variables and functions into global scope.
+  * Relying in the global space is error-prone due to naming conflicts and unexpected side-effects.
+  * Modules allow us to explicitly define what's loaded in the global scope.
+    * This plays a huge role in allowing Javascript developers to build large scale applications. 
 
-* NodeJS supports commonjs modules, enabling developers to organize their code into small files that define specific functionality. 
-* This plays a huge role in allowing Javascript developers to build large scale applications. 
-* In a commonjs module anything that is assigned to module.exports can be accessed by other modules via the `require` function. 
-* The require expects a relative or absolute path to the module being imported. 
-  * Like: `require('./relative/path/to/the/module.js')`. 
+### Using CommonJS modules
+* In Node.js, every JavaScript file is a module.
+* CommonJS modules work based on 2 main elements:
+  * The `module.exports` object
+    * Anything that is assigned to module.exports can be accessed by other modules via the `require` function. 
+    * Everything else will be hidden from other modules.
+  * The `require` function
+    * Searches and loads CommonJS modules.
+    * The require function expects a relative or absolute path to the module being imported. 
+      * Like: `require('./relative/path/to/the/module.js')`. 
 * CommonJS modules cannot be co-dependent
   * If module "A" requires module "B" then "B" can not also require "A".
+* *ES6 introduced a different module format that is not compatible with CommonJS modules.*
+   * *At this time, both ES6 and CommonJS modules are common in JavaScript codebases, so we'll learn both in this course.*
 
 ## Testing and TDD
 * TDD is a software development process where you write tests before you write code.
