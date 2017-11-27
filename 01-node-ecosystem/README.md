@@ -147,7 +147,6 @@ Before people are developers, they often develop many habits they will need to u
   * Its job facilitate writing expectations and then throw errors when the expectations are not met.
 * When testing with jest, we'll primarily work with 3 functions:
   * `descride`
-    * Creates a block that groups together several related tests in one "test suite"
   * `test`
   * `expect`
 
