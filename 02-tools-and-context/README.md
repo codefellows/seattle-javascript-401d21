@@ -1,18 +1,6 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 02: Tools and Context
 ===
 
-# Daily Plan
-
-* Notes: 
-  - Top of mind questions?
-  - What do you want to impact when you grow up?
-* Code Review
-* Scripts and Tools with package.json
-* Context vs Scope
-* `this` keyword
-  * Call & Apply
-* Lab Preview
-
 # Learning Objectives
 * Students will understand the difference between context and scope
 * Students will be able to control a functions context using call, apply, and bind
