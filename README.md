@@ -2,16 +2,16 @@
 =====================================
 > Advanced Software Development  
 
-[![](https://img.shields.io/badge/canvas-401d20-blue.svg)](https://canvas.instructure.com/courses/1214419)
-[![](https://img.shields.io/badge/labs-401d20-yellow.svg)](https://github.com/codefellows-seattle-javascript-401d20)
-[![](https://img.shields.io/badge/slack-401d20-orange.svg)](https://codefellows.slack.com/messages/C70NABNJD/)
+[![](https://img.shields.io/badge/canvas-401d20-blue.svg)](https://canvas.instructure.com/courses/1246332)
+[![](https://img.shields.io/badge/labs-401d20-yellow.svg)](https://github.com/codefellows-seattle-javascript-401d19)
+[![](https://img.shields.io/badge/slack-401d20-orange.svg)](https://codefellows.slack.com/messages/C82U3A04X/)
 
 # Welcome
 
 Welcome to Code 401 Javascript! This is a class that builds on your fundamental Javascript programming knowledge to make you a proficient full-stack Javascript developer, and to prepare you for getting a job in today's Javascript job market!
 
 # Introduction
-In this class we are going to cover a lot of advanced web development topics. The first 5 weeks of this course will be dedicated to learning back-end development using **NodeJS**. In this section of the course you will learn to create authenticated RESTful APIs with persistent storage. In the second 5 weeks of this course we will be focusing on learning advanced front-end web development. In this section of the course you will learn to create client side web applications using **AngularJS**, that interact with RESTful APIs to authenticate users and persist data.
+In this class we are going to cover a lot of advanced web development topics. The first 5 weeks of this course will be dedicated to learning back-end development using **NodeJS**. In this section of the course you will learn to create authenticated RESTful APIs with persistent storage. In the second 5 weeks of this course we will be focusing on learning advanced front-end web development. In this section of the course you will learn to create client side web applications using **React JS**, that interact with RESTful APIs to authenticate users and persist data.
 
 # Course Layout
 This course has been organized and structured to spread across 10 weeks. With the exception of project weeks, each week will have around 3-4 lecture/lab units. The class schedule is Monday-Friday from 9am - 6pm. Lecture will take place from 9am - 12pm daily and co-working time is scheduled from 1pm - 5pm.  You are welcome to leave after co-working time or can stick around as there will likely be a TA, or support staff, available for another hour.

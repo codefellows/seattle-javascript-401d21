@@ -140,11 +140,16 @@ Before people are developers, they often develop many habits they will need to u
   * Refactor you code to optimize it.
   * The tests should still pass, because the behavior should not have changed.
 
-## Jest and Expect
+## Jest 
 * Jest is a testing framework.
   * Its job is to facilitate writing and running tests.
 * Expect is an assertion library.
   * Its job facilitate writing expectations and then throw errors when the expectations are not met.
+* When testing with jest, we'll primarily work with 3 functions:
+  * `descride`
+    * Creates a block that groups together several related tests in one "test suite"
+  * `test`
+  * `expect`
 
 <!--links -->
 [About Node]: https://nodejs.org/en/about/
