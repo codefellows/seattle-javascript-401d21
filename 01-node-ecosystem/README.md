@@ -1,24 +1,6 @@
 01 : Node Ecosystem
 ===
 
-## Daily Plan
-* Intros
-* Class overview 
-  * What are we going to do over the next ten weeks?
-  * What are we covering this week? Today?
-* Workspace discussion... how organized are you?
-* Node.js / NPM Intro/Review
-* Test Driven Development
-  - Writing basic assertions
-  - Jest as a test runner
-* Node.js Modules
-  - Running scripts
-  - Creating modules
-  - Working with exports
-* Lab Process Overview
-* Lab Assignment Preview
-
------
 # Learning Objectives
 * Students will be able to set up a node project
 * Students will be able to create node modules that conform to the CommonJS module pattern
