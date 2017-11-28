@@ -4,20 +4,14 @@ const greet = module.exports = {};
 
 greet.hi = (name) => {
   if(name === '' || typeof name !== 'string')
-    return -1;
+    throw new TypeError('<name> should be a string');
 
   return `Hello, ${name}!`;
 };
 
 greet.bye = (name) => {
   if(name === '' || typeof name !== 'string')
-    return -1;
+    throw new TypeError('<name> should be a string');
 
   return `Goodbye, ${name}!`;
 };
-
-function betterBye(){
-  console.log('==============================');
-}
-
-betterBye();
