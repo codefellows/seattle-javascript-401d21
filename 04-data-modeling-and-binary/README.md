@@ -1,49 +1,27 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 04: Data Modeling and Binary Data
-=====================================
+401 JS -- class 04 Event Emitters, Buffers, and Bitmaps
+===
 
-## Learning Objectives
-* Students will learn how binary data is encoded and decoded
-* Students will be able to manipulate binary data using Nodes Buffers
-* Students will be able to use EventEmitters for managing asyncronous code
-
-## Resources
+## Bitmap Resources
+* Read [bitmap file format]
 * Read  [node buffer api docs]
 * Watch [endian and little endian]
 
-## Javascript Data Modeling
-Javascript has a limited number of built in data types including objects, arrays, strings, numbers, and booleans. Data modeling in Javscript is the process of taking a real world or conceptual idea and encoding it into Javascript's built in data-types. There isn't technicaly a right or wrong way to model data in software development, because it has been proven that any idea can be represented using any data structure. However it is important to follow several practices to boost software readbility and maintainability. Booleans should be used when the data can have only two states. Numbers should be used when the data could support arithmatic opperaions. Strings should be used when the data is representing natrual language. Arrays should be used to bundle multiple pieces of like data. Objects should be used to bundle multiple pieces of different data. 
+## Learning Objectives
+<!-- unordered list of learning objectives -->
 
-## Binary
-You probably know that everything in the computer is stored in 0s and 1s. As web developers we don't often have to work with data at such a low level, instead we usualy get to work with Strings, Numbers, Arrays, Objects, and so on. Though most of the time we are lucky enough to work with such abstracted data types, sometimes we are required to undestand how data is stored in binary. There are predefined specifications for how to decode number and strings from binary. The majority of the data we work with is made up of numbers and strings. For example Numbers and Strings are used to make more compex things like JSON, XML, HTML, JPEG, GIF, MP3, MP4, and even Javascript. Undersanding how to manipulate binary data on a more fundamental leval, can open up doors for having much more control over the data in our applications.
-
-#### Bytes
-A byte is 8 zeros and ones `00101101`. Bytes are one of the fundamental units that programmers use to work with binary data. A byte can hold one ascii character, a number between 0 and 255, a number between -128 and 127, and anything else that has up to 256 units. 
-
-#### Strings
-Strings are made from arrays of characters. Every byte in a binary file can be decoded as a character using the `ascii` or `utf8` charicter specifications. The ASCII standard has been around since the early sixtys, and was used to encode charicters of a single locale (language). It is litteraly a map between numbers 0 to 127 and specific characters. Meaning that when you find the number 97 in a byte, that byte can also be decoded as the letter 'a'. This only works by making computers and programers conform to the specification. As computers gained more memory and found reasons to support more charicter sets, the `utf8` specification was created. UTF8 is a variable length byte encoding that allows bytes to be chained together to form a  charicter set large enough to suport every loacle, symbols, and emojii at once. UTF8 was designed as a superset of ASCII in order keep backwards compatability.  
-
-###### ASCII Table
-```
-  0 nul    1 soh    2 stx    3 etx    4 eot    5 enq    6 ack    7 bel
-  8 bs     9 ht    10 nl    11 vt    12 np    13 cr    14 so    15 si
- 16 dle   17 dc1   18 dc2   19 dc3   20 dc4   21 nak   22 syn   23 etb
- 24 can   25 em    26 sub   27 esc   28 fs    29 gs    30 rs    31 us
- 32 sp    33  !    34  "    35  #    36  $    37  %    38  &    39  '
- 40  (    41  )    42  *    43  +    44  ,    45  -    46  .    47  /
- 48  0    49  1    50  2    51  3    52  4    53  5    54  6    55  7
- 56  8    57  9    58  :    59  ;    60  <    61  =    62  >    63  ?
- 64  @    65  A    66  B    67  C    68  D    69  E    70  F    71  G
- 72  H    73  I    74  J    75  K    76  L    77  M    78  N    79  O
- 80  P    81  Q    82  R    83  S    84  T    85  U    86  V    87  W
- 88  X    89  Y    90  Z    91  [    92  \    93  ]    94  ^    95  _
- 96  `    97  a    98  b    99  c   100  d   101  e   102  f   103  g
-104  h   105  i   106  j   107  k   108  l   109  m   110  n   111  o
-112  p   113  q   114  r   115  s   116  t   117  u   118  v   119  w
-120  x   121  y   122  z   123  {   124  |   125  }   126  ~   127 del
-```
-
-#### Integers
-In order to understand how integers are encoded in zeros and ones, its important to understand how decimal notation works. In decimal every digit is worth it self times ten to the power of its place. In binary this only changes slightly, every digit is worth it self times **TWO** to the power of its place. Integers can either be decoded as `signed` or `unsigned`. Signed numbers can be negitiave or postive, and unsigned numbers can only be positive.
+## Overview
+#### Binary
+* you've probably heard that all things in the computer are just a bunch of zeros and ones
+ * its true :)
+* since zeros and ones mean almost nothing to humans we have created rules to convert them in to meaningful information
+* Integers, floating point numbers, characters are some of the basic things we can turn zeros and ones into
+* the process for taking an integer, float, character, or etc. and turning them into zeros and one is called encoding
+* the process for taking zeros and ones and turning them into an integer, float, character, or etc. is called decoding
+* binary and hex work a lot like decimal
+ * decimal is also called base 10
+ * binary is also called base 2
+ * hex is also called base 16
+ * if you take each digit multiply it times its base to the power of its place, you get its value
 
 ```
 HOW DECMAL WORKS...
@@ -59,7 +37,7 @@ value     06974
 
 ----------------------------------------------------------------------
 
-HOW UNSIGNED BINARY WORKS
+HOW BINARY WORKS
 
 places    43210
 _______________
@@ -69,33 +47,12 @@ value     01011
 1010 base 2 is the same as (1 * 8) + (0 * 4) + (1 * 2) + (1 * 1)
 1010 base 2 is the same as (8) + (0) + (2) + (1)
 1010 base 2 is the same as 11
-```
 
-###### Signed vs Unsigned
-Signed integers add a rule that states the first bit represets weather or not a numbers is positive or negative. Negitive values then follow a rule called `twos complament`. In twos complament the value after the singed bit is added to the number of positions suported by the the remaining bits and then multipiyed by -1. When decoding a four bit signed number the first bit is a boolean value indicating negitive or repostive. The reamaing three can support 8 unique values (0-7). So a signed four bit number can represet positive numbers from 0 to 7 and negitive numbers -1 to -8.
+----------------------------------------------------------------------
 
+Hex is the same ...
 ```
-Signed |Unsigned 
------------------.
- 0     |0        |0000
- 1     |1        |0001   
- 2     |2        |0010   
- 3     |3        |0011   
- 4     |4        |0100   
- 5     |5        |0101   
- 6     |6        |0110   
- 7     |7        |0111   _________NEGITIVE_VALUES
--8     |8        |1000   (8 + 0) * -1 
--7     |9        |1001   (8 + 1) * -1
--6     |10       |1010   (8 + 2) * -1
--5     |11       |1011   (8 + 3) * -1
--4     |12       |1100   (8 + 4) * -1
--3     |13       |1101   (8 + 5) * -1
--2     |14       |1110   (8 + 6) * -1
--1     |15       |1111   (8 + 7) * -1
-```
-
-###### Hex Cheat Sheet
+* below is decimal hex binary conversion chart
 ``` text
 DEC |HEX |BIN
 --------------
@@ -116,6 +73,109 @@ DEC |HEX |BIN
 14  |e   |1110   
 15  |f   |1111   
 ```
+* to convert to floating points is a little takes the binary to decimal idea a little further by using it for scientific notation
+* to convert to text there is an encoding called ascii which maps all characters to a corresponding number
+ * run the command `man ascii` in your command line to see an ascii chart
+* now days we have a character encoding called `utf8` that is an extension for ascii, that supports multiple languages
+
+#### Buffers
+Pure javascript is Unicode friendly but not nice to binary data. When dealing with TCP streams or the file system, it's necessary to deal with octet streams. node has a few ways to handle manipulating, consuming, and creating octet streams.
+Raw dat is stored as instances of the Buffer class A buffer is similar to an array of integers, but corresponds to raw memory allocation outside the V8 heap. a Buffer cannot be resized.
+
+The Buffer class is a global, making it very rare that one would need to ever require('buffer').
+
+* A Buffer represents arrays of bytes
+ * A byte is made of of 8 bits
+ * A bit is a single one or zero
+* Each byte in a buffer can be decoded as an integer, floating point number, or a string
+* Integers and Floats come in different sizes 8bit, 16bit, 32bit
+* Strings come in different encodings 'hex', 'utf8', 'base64' ...
+* Buffers are often referred to as raw data, meaning just a bunch of zeros and ones
+* Many of the Node APIs use buffers as the data type when dealing with input and output
+* Your OS stores binary in one of two ways
+ * `little endian` - most significant bit first
+ * `big endian` - least significant bit first
+* In a node **REPL** you can un `os.endianness()` to determine how your os stores bytes
+ * `'LE'` == little endian
+ * `'BE'` == big endian
+* Make sure your using the methods that correspond to your systems **endianness**
+
+###### Creating buffers
+* ` new Buffer(size) ` allocates a new buffer of size octets(bytes)
+* ` new Buffer(array) ` allocates a new buffer using an array of octets
+* ` new Buffer(buffer) ` copies the passed buffer data onto a new Buffer instance
+* ` new Buffer(str, *encoding) ` allocates a new buffer containing a giving string, defaults to utf8
+
+###### buffer info
+* ` Buffer.isBuffer(obj) ` test is obj is Buffer -> return boolean
+* ` Buffer.isEncoding(encoding) ` test if the encoding is valid -> return boolean
+* ` Buffer.byteLength(string, *encoding) ` gives the actual byte length of a string. default encoding = utf8
+* ` buf.length ` return the size of the buffer in bytes.
+
+###### comparing buffers
+* ` buf.equals(otherBuffer) ` returns boolean of weather this and other buffer have the same bytes
+* ` buf.compare(otherbuffer) ` returns a number indicating whether this comes before or after or is the same as the other buffer in a sort
+
+###### copying, slice, and concat
+* ` buf.copy( targetBuffer, *targetStart, *sourceStart, *sourceEnd)`
+ * create a new buffer
+* ` buf.slice(*start, *end) `
+ * create a  a new buffer witch references the same memory as the old by offset and cropped by start, end
+* ` Buffer.concat(list, *totalLength) ` concatenates the buffers in the list
+
+###### indexing a buffer
+ * `buf[index]` get and set the octet at index (just like an array)
+
+###### fill a buffer
+* ` buff.fill(value, *offset, *end) ` fills the buffer with the specified value
+ * **offset** - number of bytes into array, Defaults: 0
+ * **end** - number of bytes into array to stop, Defaults, buffer.length
+
+###### writing integers
+* ` writeUInt16LE(value, offset, *noAssert)`
+* ` writeUInt32LE(value, offset, *noAssert)`
+* ` writeUInt8(value, offset, *noAssert)`
+* ` writeInt16LE(value, offset, *noAssert)`
+* ` writeInt32LE(value, offset, *noAssert)`
+* ` writeInt8(value, offset, *noAssert)`
+ * **value** - Number to write
+ * **offset** - number of bytes into array
+ * **noAssert** - Boolean,  set to true to skip validation off offset
+
+###### reading integers
+* `readUInt16LE(offset, *noAssert)`
+* `readUInt16BE(offset, *noAssert)`
+* `readUInt32LE(offset, *noAssert)`
+* `readUInt32BE(offset, *noAssert)`
+* `readUInt8(offset, *noAssert)`
+* `readInt16LE(offset, *noAssert)`
+* `readInt16BE(offset, *noAssert)`
+* `readInt32LE(offset, *noAssert)`
+* `readInt32BE(offset, *noAssert)`
+* `readInt8(offset, *noAssert)`
+ * **offset** - number of bytes into array
+ * **noAssert** - Boolean,  set to true to skip offset validation
+
+
+###### writing strings
+ * ``` buf.write(string, *offset, *length, *encoding)```
+ * offset defaults to 0
+ * encoding defaults to utf8
+ * if buffer did not contain enough space to fit the entire string it will write a partial amount of the string.
+ * length defaults to buffer.length
+
+###### reading strings
+* ``` buf.toString(*encoding, *start, *end) ``` decodes and returns a string from buffer data
+ * **encoding** - String, Default: 'utf8'
+ * **start** - Number, Default: 0
+ * **end** - Number, Default: buffer.length
+ * Converting between buffers and strings requires a specific encoding
+  * `acii` - for 7 bit ASCII data
+  * `utf8` - for multibyte encoded unicode characters
+  * `utf16le` - 2 or 4 byte, little endian unicode
+  * `ucs2` - alias of utf16le
+  * `base64` - Base64 string encoding
+  * `hex` - encode each byte as two hexadecimal characters
 
 <!--links -->
 [events api docs]: https://nodejs.org/api/events.html
