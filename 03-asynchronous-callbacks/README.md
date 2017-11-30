@@ -12,7 +12,7 @@
 
 # Resources
 * Watch [What the Heck is the Event Loop Anyway](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-* Read [Understanding Error First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-Node-js/)
+* Read [Understanding Error First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
 * Skim [Node's File System Module Docs](https://Nodejs.org/dist/latest-v9.x/docs/api/fs.html)
 * Skim [Node's buffer documentation](https://Nodejs.org/api/buffer.html#buffer_buffer)
 
