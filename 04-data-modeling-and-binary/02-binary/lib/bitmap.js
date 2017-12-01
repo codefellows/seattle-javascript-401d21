@@ -16,5 +16,6 @@ bitmap.parseBitmap = (buffer) => {
   parsedBitmap.fileSize = buffer.readInt32LE(FILE_SIZE_OFFSET);
   parsedBitmap.pixelTableOffset = buffer.readInt32LE(PIXEL_TABLE_OFFSET);
   parsedBitmap.height = buffer.readInt32LE(HEIGHT_OFFSET);
+  parsedBitmap.colorTable = null;
   return parsedBitmap;
 };
