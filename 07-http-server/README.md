@@ -1,24 +1,6 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 07: HTTP and REST APIs
 ===
 
-## Daily Plan
-* Notes & Daily Recap
-  - Labor Day Holiday (Monday)
-    - Game plan for next week being a 4-day week
-  - Survey feedback
-
-* Code Review - TCP chat server & Tests
-* HTTP Overview
-  - Req/Res review
-  - Status codes
-* REST Review
-* Lab Preview & HTTP Server Demo
-  - Body parser review
-  - Url & Query parsers
-  - Endpoints & Methods
-
-* [11:00a] Guest Lecture: Testing an HTTP Server - Allie G.
-
 ## HTTP Resources
 * Skim [Nodejs http module]
 * Skim [Wiki list of header fields]
@@ -108,46 +90,3 @@
 [Nodejs http module]: https://nodejs.org/api/http.html
 [What is a rest api?]: https://medium.com/@lazlojuly/what-is-a-restful-api-fabb8dc2afeb#.nm7uiiltt
 [Wiki list of header fields]: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields
-
-
-
-
-### Survey Feedback
-1. Constructive feedback
-  - Better prep for classes
-  - I was told that you earn an actual Microsoft Certification from the .net 401 so I would recommend someone to talk that course instead
-  - Slow the pace a half tick or cover the topics more thoroughly before sending us off to labs
-  - Been a bit more organized
-
-2. How was the last week
-  - I feel the first week in 401 was much better structured then the first week in 301. Because I can see a path on what we are learning and where we might be headed with what we are learning I can structure my research and learning.
-  - Projector going out wasn't great, but it was an unfortunate situation beyond anyone's control.
-  - The fact that the school does not have a spare projector or bulb is really unacceptable. Having lecture for 2 days in the event area when we are trying to cover a rather large topic is a failure on the schools part. It was distracting and very difficult to take notes.
-  - Really enjoying the stuff we are learning and I feel like the lecture has been great this week.
-
-3. Least helpful components
-  - Code demos
-  - Equipment breakdowns
-  - We tend to fly over the content for the labs and then have to struggle through it for hours, which i understand it is not supposed to be easy but there are times we really dont get much instruction on the daily lab work.
-
-4. Most helpful components
-  - This week should have been taught in 301! The lab 05 which we deconstructed and then reconstructed javascript methods was a great tool to understand how they work. We also took a deep dive into the callstack and callback functions which totally was glossed over in 301, I used them without understand them. Now I "think" I understand them and thought that bitmap was terribly hard but I understand callbacks now.
-  - Morning lectures
-  - googling stuff that I didnt understand from code demos
-  - White boarding was useful, I'm looking forward to learning more about data structures as well.
-  - Mob coding has been incredibly helpful!
-  - It seems the TA's actually understand the course materials which is helpful when we need them.
-  - Everything is great.
-  - Having awesome instructor and TAs. And class mates that are willing to stop whatever they doing to help!
-  - Even though I haven't been utilizing the TA's help very much in this first week I'm relieved that they seem eager to help and share their knowledge.
-  - The lectures have been just the right pace for me this week - not moving too fast or too slow. I also appreciate that the demo code has been really helpful and that there are a lot more readings and notes.
-
-5. Questions, suggestions, concerns
-  - Nopes all around.
-
-6. Candid feedback
-  - All My TA's have promptly been available whenever I needed them.
-  - I've really enjoyed 401JS so far. I appreciate the content and how we are learning things at a deeper level. I also appreciate that we are given the opportunity to work thru problem sets with direction. I think the learning really comes in the struggle.
-  - Allie has been fantastic as a TA so far, and her grading and comments have pointed me in the direction that I need to work towards.
-  - Great job instructional team!
-  - This TA group is awesome - super willing to help out and really friendly. Go TAs!!
