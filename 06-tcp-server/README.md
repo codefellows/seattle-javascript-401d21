@@ -1,6 +1,9 @@
 401 JS -- class 06 OSI model, TCP protocol
 ===
 ## Learning Objectives
+## Resources
+
+* Skim [Net Module Docs](https://nodejs.org/api/net.html)
 
 ## Overview
 #### OSI Model
