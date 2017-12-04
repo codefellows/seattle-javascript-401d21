@@ -1,27 +1,5 @@
 401 JS -- class 06 OSI model, TCP protocol
 ===
-
-## Daily Plan
-
-* Notes:
-  - Anything top of mind
-
-* Code Review
-  - Bitmap
-  - List 
-
-* OSI Model
-* TCP
-* Chat Server Demo
-* Lab Preview
-
-## OSI Resources
-* Skim [OSI model wiki]
-
-## TCP Resources
-* Watch [TCP connection walkthrough]
-* Skim [TCP wiki]
-
 ## Learning Objectives
 
 ## Overview
