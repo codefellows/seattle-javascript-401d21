@@ -32,7 +32,6 @@ The session layer is responsible for opening, closing, and  managing end-user ap
 The transport layer is responsible for host to host communication services for applications.  
  * `TCP` - the Transmission Control Protocol is one of the main transport protocols of the Internet protocol suite.
  * `UDP` - the User Datagram Protocol uses a simple connectionless transmission model.
- * `uTP` -
 * **Layer 3** Network  
 The Network layer is responsible for packet forwarding.  
  * `IPv4/IPv6` - The Internet Protocol is responsible for delivering packets from source host to destination host
