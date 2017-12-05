@@ -40,7 +40,6 @@
       * the router we will be creating will mimic the core functionality of the router supplied by `express.js`
     * in addition to the creation of our API, we'll be adding tests that check our API calls for the expected response data
       * this will be done through the use of `superagent` and Jest (`expect`)
-      * **remember:** include the server in your test file so that your server is running during the testing process
 
 ## URI vs URL
 A URI is a string of characters used to identify a resource. A URI could be an book ISBN, a street address, a web address, or anything else. URLs are URIs that idedentify resources on the world wide web. A URL must contain everything it needs to retrieve a resource. `/dashboard` is a URI where `https://www.example.com/dashboard` is a URL.
