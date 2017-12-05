@@ -4,6 +4,7 @@
 ## Resources
 
 * Skim [Net Module Docs](https://nodejs.org/api/net.html)
+* Skim [Winston Docs](https://www.npmjs.com/package/winston)
 
 ## Overview
 #### OSI Model
