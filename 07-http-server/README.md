@@ -9,7 +9,7 @@
 ## Learning Objectives
 * Students will be able to identify qualities of the HTTP protocol
 * Students will be able to implement a HTTP server using Nodejs
-* Students will be able to explain what a HTTP RESTful is
+* Students will be able to test HTTP web servers using TDD practices.
 
 ## Overview
 #### HTTP
