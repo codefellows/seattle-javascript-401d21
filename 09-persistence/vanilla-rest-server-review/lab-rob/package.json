@@ -1,0 +1,26 @@
+{
+  "name": "lab-08-reed",
+  "version": "1.0.0",
+  "description": "Code Fellows Code 401d19 Lab 08 - Restful HTTP Server",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint .",
+    "start": "node index.js"
+  },
+  "author": "Robert Reed",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "uuid": "^3.1.0",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "jest": "^21.2.1",
+    "superagent": "^3.8.1"
+  }
+}
