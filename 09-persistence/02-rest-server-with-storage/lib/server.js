@@ -4,7 +4,8 @@ const http = require('http');
 const logger = require('./logger');
 const router = require('./router');
 
-process.env.PORT = 3000;
+require('dotenv').config();
+
 //-------------------------------------------------
 // REGISTERING NOTE ROUTER
 //-------------------------------------------------
@@ -20,7 +21,6 @@ const server = module.exports = {};
 
 server.start = () => {
   return new Promise((resolve,reject) => {
-    console.log(isServerOn);
     if(isServerOn){
       logger.log('error','__SERVER_ERROR__ server is already running');
       return reject(new Error('__SERVER_ERROR__ server is already running'));
