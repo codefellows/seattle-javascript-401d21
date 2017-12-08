@@ -1,0 +1,19 @@
+{
+  "name": "10-doubly-linked-lists-stacks-queues-binary-search",
+  "version": "1.0.0",
+  "description": "![cf](http://i.imgur.com/7v5ASc8.png) 10: Doubly Linked Lists, Stacks, Queues, Binary Search ===",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "jest": "^21.2.1"
+  }
+}

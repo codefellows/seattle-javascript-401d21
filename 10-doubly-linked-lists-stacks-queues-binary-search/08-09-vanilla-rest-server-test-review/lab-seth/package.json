@@ -1,0 +1,29 @@
+{
+  "name": "08-http-server",
+  "version": "1.0.0",
+  "description": "This is a simple HTTP server that allows users to input a url to make a cow say something!",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest -i --coverage",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Seth Donohue",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "jest": "^21.2.1",
+    "superagent": "^3.8.1"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "faker": "^4.1.0",
+    "fs-extra": "^4.0.3",
+    "uuid": "^3.1.0",
+    "winston": "^2.4.0"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
