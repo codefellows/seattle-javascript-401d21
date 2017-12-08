@@ -2,28 +2,17 @@
 ===
 
 ## Learning Objectives
-* students will be able to implement a linked list
 * students will be able to implement a doubly linked list
-* students will be able create and implement common linked list methods
+* Students will be able to implement a stack
+* Students will be able to identify use cases for a stack
+* Students will be able to implement a queue
+* Students will be able to identify use cases for a queue
 
 ## Resources
-* Watch [linked lists]
-* Skim [linked list wiki]
-
-## Overview
-
-![linked-list](https://s3-us-west-2.amazonaws.com/slugbyte-assets/linked-list.svg)
-
-#### Singly Linked List
-* there are no FILO/FIFO-style constraints on singly linked lists
-  * **FILO** - first in last out
-  * **FIFO** - first in first out
-* singly linked lists contain a series of nodes where each node contains a value as well as a `next` property - this points to the next node in a line of interconnected nodes
-* operations that can be performed on singly linked lists include:
-  * insertion (ie: `append` and `prepend` methods)
-  * deletion (ie: `remove` method)
-  * traversal (ie: `find` method)
-* singly linked lists can contain pointers to both the head and the tail, yet this is not a common or simplified implementation and is usually reserved for doubly linked lists
+* Read [YDKJS: This and Object Prototypes](https://github.com/getify/You-Dont-Know-JS/tree/master/this%20%26%20object%20prototypes)
+* Watch [stacks and queues](https://www.youtube.com/watch?v=wjI1WNcIntg)
+* Read [stack wiki](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+* Skim [queue wiki](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
 #### Doubly Linked List
 * there are no FILO/FIFO-style constraints on doubly linked lists
@@ -34,25 +23,20 @@
   * traversal (ie: `find` method)
 * doubly linked lists generally contain pointers to both the head and the tail
 
-#### Whiteboard Exercise (Groups of 3-4)
-* **note:**
-  * you **may not** use your computer, notes, or the internet to implement the following items
-  * once implemented, you **may** use your computer, notes, or the internet to check your work
+#### Stacks
+Stacks are a data structure that serve as a collection of elements. These elements are stacked in a last in, first out sequence **(aka LIFO - last in first out)**. It may help to think about a stack as a collection of plates and the way that you add and remove them.
 
-* **singly linked list**
-  * implement a singly linked list constructor
-  * implement a `prepend` method - this should prepend a node with a value
-  * implement an `append` method - this should append a node with a value
-  * **optional:** implement a `remove` method - this should remove a node from the list, keeping the list interconnected after the removal
-  * **optional:** implement a `find` method - this should find a node and return the node
-  * **stretch:** implement a `findMiddle` method - this should find and return the middle node
+Stacks are often used for:
+  * history capability with undo functionality
+  * call stack management
 
-* **doubly linked list**
-  * implement a doubly linked list constructor
-  * implement a `prepend` method - this should prepend a node with a value
-  * implement an `append` method - this should append a node with a value
-  * **optional:** implement a `remove` method - this should remove a node from the list, keeping the list interconnected after the removal
-  * **optional:** implement a `find` method - this should find a node and return the node
+Common methods include:
+  * `pop` removes the most recent element from the stack
+  * `push` adds a new element to the stack
 
-[linked lists]: https://www.youtube.com/watch?v=njTh_OwMljA
-[linked list wiki]: https://en.wikipedia.org/wiki/Linked_list
+#### Queues
+Queues are also a data structure that serve as a collection of elements. Elements in a queue are added in a first in, first out sequence **(aka FIFO - first in first out)**. It may help to think about a queue as a bunch of people standing in line at a concert - the first person in line is the first person in the venue.
+
+Common methods include:
+  * `enqueue` is used to add an element to the end of a queue
+  * `dequeue` is used to retrieve and remove an element from the beginning of a queue
