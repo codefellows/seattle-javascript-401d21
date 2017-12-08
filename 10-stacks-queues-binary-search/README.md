@@ -7,6 +7,7 @@
 * Students will be able to identify use cases for a stack
 * Students will be able to implement a queue
 * Students will be able to identify use cases for a queue
+* Students will understand the inner workings or Binary Search
 
 ## Resources
 * Read [YDKJS: This and Object Prototypes](https://github.com/getify/You-Dont-Know-JS/tree/master/this%20%26%20object%20prototypes)
