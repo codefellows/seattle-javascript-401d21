@@ -289,3 +289,91 @@
 {"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T17:52:52.202Z"}
 {"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":23,"3":116,"4":26,"5":211,"6":40,"7":51,"8":231,"9":26,"10":174,"11":57}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T17:52:52.180Z","__v":0,"range":"Buckinghamshire","state":"Maryland","name":"Cambridgeshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T17:52:52.202Z"}
 {"level":"info","message":"server off","timestamp":"2017-12-12T17:52:52.209Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T17:56:13.627Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T17:56:13.779Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T17:56:13.796Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T17:56:13.816Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T17:56:13.816Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T17:56:13.826Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T17:56:13.831Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T17:56:13.832Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T17:56:13.842Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":24,"3":61,"4":2,"5":106,"6":240,"7":54,"8":254,"9":1,"10":50,"11":194}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T17:56:13.820Z","__v":0,"range":"Buckinghamshire","state":"Wyoming","name":"Berkshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T17:56:13.842Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T17:56:13.847Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:02:34.111Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:02:34.186Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:02:34.201Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:02:34.222Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:02:34.222Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:02:34.232Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:02:34.236Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:02:34.238Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:02:34.248Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":25,"3":186,"4":164,"5":114,"6":111,"7":57,"8":144,"9":231,"10":139,"11":227}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:02:34.226Z","__v":0,"range":"Buckinghamshire","state":"South Carolina","name":"Avon","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:02:34.248Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:02:34.253Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:02:52.871Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:02:52.944Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:02:52.960Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:02:52.980Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:02:52.980Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:02:52.990Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:02:52.995Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:02:52.999Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:02:53.005Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":25,"3":204,"4":167,"5":137,"6":219,"7":57,"8":213,"9":21,"10":52,"11":58}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:02:52.985Z","__v":0,"range":"Cambridgeshire","state":"Louisiana","name":"Cambridgeshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:02:53.005Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:02:53.009Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:03:09.862Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:09.933Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:03:09.952Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:09.969Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:03:09.970Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:09.983Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:09.989Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:03:09.991Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:03:09.997Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":25,"3":221,"4":236,"5":17,"6":169,"7":58,"8":220,"9":58,"10":51,"11":154}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:03:09.974Z","__v":0,"range":"Buckinghamshire","state":"Illinois","name":"Cambridgeshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:03:09.997Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:03:10.000Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:03:36.075Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:36.227Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:03:36.244Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:36.261Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:03:36.261Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:36.271Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:03:36.282Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":25,"3":248,"4":74,"5":220,"6":136,"7":59,"8":24,"9":39,"10":3,"11":113}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:03:36.266Z","__v":0,"range":"Cambridgeshire","state":"Oregon","name":"Bedfordshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:03:36.282Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:36.291Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:03:36.294Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:03:36.296Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:03:50.290Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:50.440Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:03:50.457Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:03:50.475Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:03:50.476Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:50.487Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:03:50.496Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":26,"3":6,"4":18,"5":86,"6":153,"7":59,"8":97,"9":14,"10":163,"11":97}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:03:50.482Z","__v":0,"range":"Berkshire","state":"Idaho","name":"Buckinghamshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:03:50.496Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:03:50.507Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:03:50.515Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:03:50.518Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:04:04.897Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:04:04.967Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:04:04.987Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:04:05.003Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:04:05.004Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:04:05.017Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:04:05.024Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":26,"3":21,"4":60,"5":109,"6":98,"7":59,"8":149,"9":89,"10":188,"11":2}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:04:05.009Z","__v":0,"range":"Buckinghamshire","state":"North Carolina","name":"Borders","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:04:05.024Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:04:05.033Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:04:05.037Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:04:05.040Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2017-12-12T18:04:27.902Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:04:27.975Z"}
+{"level":"info","message":"Returning with a 200 status and a mountain","timestamp":"2017-12-12T18:04:27.992Z"}
+{"level":"info","message":"POST - processing that request","timestamp":"2017-12-12T18:04:28.012Z"}
+{"level":"info","message":"POST - responding with a 400 code","timestamp":"2017-12-12T18:04:28.012Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:04:28.020Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2017-12-12T18:04:28.027Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":{"_bsontype":"ObjectID","id":{"0":90,"1":48,"2":26,"3":44,"4":215,"5":206,"6":180,"7":59,"8":229,"9":117,"10":101,"11":193}},"wasPopulated":false,"activePaths":{"paths":{"range":"init","state":"init","name":"init","timestamp":"init","__v":"init","_id":"init"},"states":{"ignore":{},"default":{},"init":{"__v":true,"timestamp":true,"range":true,"state":true,"name":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"timestamp":"2017-12-12T18:04:28.016Z","__v":0,"range":"Berkshire","state":"Oregon","name":"Buckinghamshire","_id":{"$ref":"$[\"$__\"][\"_id\"]"}},"$init":true,"level":"info","message":"","timestamp":"2017-12-12T18:04:28.028Z"}
+{"level":"info","message":"GET - processing a request for a specific id","timestamp":"2017-12-12T18:04:28.036Z"}
+{"level":"info","message":"GET - returning a 404 status code. could not parse the id","timestamp":"2017-12-12T18:04:28.041Z"}
+{"level":"info","message":"server off","timestamp":"2017-12-12T18:04:28.043Z"}

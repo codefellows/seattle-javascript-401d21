@@ -60,7 +60,7 @@ describe('api/mountains', () => {
     test('should respond with a 200 status code if there is no error', () => {
       let mountainToTest = null;
 
-      mountainMockupCreator()
+      return mountainMockupCreator()
         .then(mountain => {
           mountainToTest = mountain;
           return SUPERAGENT.get(`${APIURL}/${mountain._id}`);
