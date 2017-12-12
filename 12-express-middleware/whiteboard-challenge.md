@@ -1,4 +1,17 @@
-Write code to intersect two linked lists.
+# LinkedList Intersection
+Write code to intersect two linked lists. Assume the two LinkedLists are sorted.
+
+Given the following two lists the result only contains the values `2` and `4`
+because those are the only values that appear in both lists.
+
+```
+list 1: 0 2 3 4 5
+list 2: 1 2 4 6
+result: 2 4
+```
+
+You may assume you have the following `LinkedList` class:
+
 ```javascript
 class LinkedList {
   constructor(value){
@@ -15,26 +28,19 @@ class LinkedList {
     this.next.append(node)
     return this
   }
-}
-
-LinkedList.intersect = (listA, listB) => {
-  let encountered = {}
-  let result = new LinkedList(null)
-  while(listA){
-    encountered[listA.value] = true
-    listA = listA.next
+  
+  toString() {
+    var str = "";
+    var current = this;
+    while (current) {
+      str += current.value + " ";
+      current = current.next;
+    }
+    return str;
   }
-  while(listB){
-    if(encountered[listB.value])
-      result.append(new LinkedList(listB.value))
-    listB = listB.next
-  }
-  return result.next
 }
-
-
-let a = new LinkedList(3).append(new LinkedList(4)).append(new LinkedList(5))
-let b = new LinkedList(3).append(new LinkedList(4)).append(new LinkedList(6))
-
-let c = LinkedList.intersect(a, b)
 ```
+
+## Solutions
+![Marking values as "seen" with a HashMap](./whiteboard-solution-1.js)
+![Walking through two lists simultaneously](./whiteboard-solution-2.js)
