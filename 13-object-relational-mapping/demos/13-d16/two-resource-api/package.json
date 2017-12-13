@@ -1,0 +1,29 @@
+{
+  "name": "two-resource-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-db": "mkdir -p ./db && mongod --dbpath ./db",
+    "stop-db": "killall mongod",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.0",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "faker": "^4.1.0",
+    "mocha": "^3.4.2",
+    "superagent": "^3.5.2"
+  }
+}
