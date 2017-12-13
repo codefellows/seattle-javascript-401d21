@@ -8,7 +8,7 @@ let intersectArrays = (A,B) => {
 	}
 	for(let iB in B){
 		if(valuesFound[B[iB]] === true)
-			intersection.push[B[iB]];
+			intersection.push(B[iB]);
 	}
 	return intersection;
 };
