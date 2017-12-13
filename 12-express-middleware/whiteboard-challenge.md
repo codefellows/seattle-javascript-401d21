@@ -42,5 +42,5 @@ class LinkedList {
 ```
 
 ## Solutions
-![Marking values as "seen" with a HashMap](./whiteboard-solution-1.js)
-![Walking through two lists simultaneously](./whiteboard-solution-2.js)
+* ![Marking values as "seen" with a HashMap](./whiteboard-solution-1.js)
+* ![Walking through two lists simultaneously](./whiteboard-solution-2.js)
