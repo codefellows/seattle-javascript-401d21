@@ -60,7 +60,8 @@ noteRouter.get('/api/notes/', (request,response,next) => {
 
 noteRouter.get('/api/notes/:id',(request,response,next) => {
   return Note.findById(request.params.id)
-    .then(note => {
+    .populate('category')// vinicio - use this with care
+    .then(note => {      // wit great power comes great responsibility
       if(!note){
         throw httpErrors(404,'note not found');
       }

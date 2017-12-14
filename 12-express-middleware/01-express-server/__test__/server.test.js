@@ -75,7 +75,7 @@ describe('/api/notes', () => {
     });
 
     test('should respond with a 404 if the id is invalid', ()=>{
-      return superagent.delete(`${apiURL}/mario`)
+      return superagent.delete(`${apiURL}/reallyOBSCUUUUUUUUUREANYTHING`)
         .then(Promise.reject)
         .catch(response => {
           expect(response.status).toEqual(404);
