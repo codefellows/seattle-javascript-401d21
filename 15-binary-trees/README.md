@@ -1,4 +1,4 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 15: Career Coaching - Day 1
+![cf](http://i.imgur.com/7v5ASc8.png) 15: Binary Trees
 ===
 
 ## Learning Objectives
