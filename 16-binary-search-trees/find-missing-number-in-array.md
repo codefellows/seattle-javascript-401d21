@@ -1,7 +1,26 @@
 You have an integer array which contains numbers from 1 to 100 but one number is missing, you need to write a function `calculateMissing = (array) => {...}` to find that missing number in an array.
 
-```javascript
+```js
+// Vinicio's solution
+const findMissingNumberMath = (array) => {
 
+  let totalItems = 100;
+  let firstNumber = 1;
+  let lastNumber = 100;
+  let totalExpectedSum = (totalItems / 2) * (firstNumber + lastNumber); // arithmetic progression
+
+  let actualSum  = array.reduce((acc, cur) => acc + cur);
+
+  return totalExpectedSum - actualSum;
+};
+
+big O(1) // space
+big O(n) // time
+```
+* One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
+
+
+```javascript
 // function to calculate missing number in an array of numbers 1 - 100
 // this makes an array with numbers 1 to 100 comma separated
 // then it maps over that array
@@ -32,22 +51,4 @@ big O(n)
 // we are using the spread operator with the .keys() function
 // then we are mapping over the numbers in the array and getting rid of 0
 // then we are reducing and adding each value together to get the expectedSum
-
-
-// Vinicio's solution
-const findMissingNumberMath = (array) => {
-
-  let totalItems = 100;
-  let firstNumber = 1;
-  let lastNumber = 100;
-  let totalExpectedSum = (totalItems / 2) * (firstNumber + lastNumber); // arithmetic progression
-
-  let actualSum  = array.reduce((acc, cur) => acc + cur);
-
-  return totalExpectedSum - actualSum;
-};
-
-big O(1) // space
-big O(n) // time
 ```
-* One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
