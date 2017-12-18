@@ -1,5 +1,7 @@
 You have an integer array which contains numbers from 1 to 100 but one number is missing, you need to write a function `calculateMissing = (array) => {...}` to find that missing number in an array.
 
+* One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
+
 ```js
 // Vinicio's solution
 const findMissingNumberMath = (array) => {
@@ -17,8 +19,8 @@ const findMissingNumberMath = (array) => {
 big O(1) // space
 big O(n) // time
 ```
-* One trick to solve this problem is to calculate sum of all numbers in the array and compare with expected sum, the difference would be the missing number.
 
+* This solution demonstrates how to create an array with the numbers 1-100 in a novel way.
 
 ```javascript
 // function to calculate missing number in an array of numbers 1 - 100
