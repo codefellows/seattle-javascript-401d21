@@ -21,7 +21,8 @@ it's impossible to call `null.contains(value)`.
 One motiviation for making `TreeNode` separate from `BinaryTree` is this: don't
 attach methods to things that might be null!
 
-```
+[TreeNode Implementation](list-node-binary-tree.js)
+```js
 class TreeNode {
   constructor(value, left, right) {
     this.value = value;
@@ -52,7 +53,8 @@ class BinaryTree {
   }
 ```
 
-```
+[TreeNode Implementation](old-binary-tree.js)
+```js
 class BinaryTree {
   constructor(value, left, right) {
     this.value = value;
