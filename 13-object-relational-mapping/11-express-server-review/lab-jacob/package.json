@@ -1,0 +1,34 @@
+{
+  "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+  "name": "lab-jacob",
+  "version": "1.0.0",
+  "description": "* Day 11",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "http": "^0.0.0",
+    "mongoose": "^4.13.6",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "faker": "^4.1.0",
+    "jest": "^21.2.1",
+    "superagent": "^3.8.2",
+    "winston": "^2.4.0"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint",
+    "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+    "dboff": "killall mongod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

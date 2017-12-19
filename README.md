@@ -6,6 +6,10 @@
 [![](https://img.shields.io/badge/labs-401d19-yellow.svg)](https://github.com/codefellows-seattle-javascript-401d19)
 [![](https://img.shields.io/badge/slack-401d19-orange.svg)](https://codefellows.slack.com/messages/C82U3A04X/)
 
+* [Canvas](https://canvas.instructure.com/courses/1246332)
+* [Lab Repos](https://github.com/codefellows-seattle-javascript-401d19)
+* [Slack Channel](https://codefellows.slack.com/messages/C82U3A04X/)
+
 # Welcome
 
 Welcome to Code 401 Javascript! This is a class that builds on your fundamental Javascript programming knowledge to make you a proficient full-stack Javascript developer, and to prepare you for getting a job in today's Javascript job market!

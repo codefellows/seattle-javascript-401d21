@@ -1,0 +1,31 @@
+{
+  "name": "lab-david",
+  "version": "1.0.0",
+  "description": "This is a server built from express and MongoDB that uses a MongoDB model to save api hits. It is setup as an inventory of resumes.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "faker": "^4.1.0",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "superagent": "^3.8.2"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+    "dboff": "killall mongod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -2,18 +2,18 @@
 ===
 
 ## Learning Objectives
-* Students will learn about realtionship modeling
-* Students will be ablue to create one to one, one to many, and many to many model relationships using a MongoDB ODM
+* Students will learn about relationship modeling
+* Students will be able to create one to one, one to many, and many to many model relationships using a MongoDB ODM
 
 ## Resources
 * Read [mongoose populate docs](http://mongoosejs.com/docs/populate.html)
 * Skim [mongoose api docs](http://mongoosejs.com/docs/api.html)
 
 ## Model Relationships
-When the modeling real world as data you will quickly discover that data has relationships to other data. Infact in the real world it is rare, if not impossible, for something to exist that has no relationships to other things. On the other hand in theretical world we can describe a thing with out describing its relationships to other things. Software enginers have discoverd useful ways to discribe the relationships (or lack of) between data that can easily be maped to a database. 
+When modeling real world data you will quickly discover that data has relationships to other data. In fact, in the real world it is rare, if not impossible for something to exist that has no relationships to other things. On the other hand in the theoretical world we can describe a thing with out describing its relationships to other things. Software engineers have discovered useful ways to describe the relationships (or lack of) between data that can easily be mapped to a database. 
 
 #### One 
-A Model that stands on its own. A web app example includes a simple Note that has no relationship with any other model, It contains all the data it needs.
+A Model that stands on its own. A web app example includes a simple Note that has no relationship with any other model; it contains all the data it needs.
 
 ```
 Note
@@ -22,7 +22,7 @@ Note
 ```
 
 #### One to One
-When a Model Foo that is related to a sigle Model Bar. Some web app examples include every user having a single profile, every profile having a single profile photo, every client is limited to a single contact email. 
+A Model Foo that is related to a single Model Bar. Some web app examples include every user having a single profile, every profile having a single profile photo, every client is limited to a single contact email. 
 
 ```
 User 
@@ -38,7 +38,7 @@ Profile
 ```
 
 #### One to Many
-A Model Foo that is realted to many Bar Models. Some web app examples include every user having may posts but posts have a singe user, every photo having many comments but each comment is to a single photo, every post having many likes but each like is to a single post.
+A Model Foo that is realated to many Bar Models. Some web app examples include every user having many posts but posts have a singe user, every photo having many comments but each comment is to a single photo, every post having many likes but each like is to a single post.
 
 ```
 Photo
@@ -61,9 +61,9 @@ Comment
   
   
 #### Many to Many
-Many Foo modles that can each have relationships to many Bar Models. A web app examples includes every user having a relation ship with many friends and each of those users have relationships with a many different freinds. 
+Many Foo models that can have relationships to many Bar Models. A web app examples includes every user having a relationship with many friends and each of those users have relationships with a many different friends. 
 
-Some databases (including mongodb) do not nativly support models having many to many relationships, but many to many can still be created through the use of a second model.
+Some databases (including mongodb) do not natively support models having many to many relationships, but many to many can still be created through the use of a second model.
 
 ###### Using One Model
 ```

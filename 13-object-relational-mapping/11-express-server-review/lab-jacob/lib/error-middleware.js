@@ -3,9 +3,7 @@
 const logger = require('./logger');
 
 module.exports = (error,request,response,next) => {
-  //------------------------------------------------
-  // HTTP ERRORS using throw or next(new Error)
-  //------------------------------------------------
+
   logger.log('info','__ERROR_MIDDLEWARE__');
   logger.log('info',error);
 
@@ -13,9 +11,7 @@ module.exports = (error,request,response,next) => {
     logger.log('info',`Responding with a ${error.status} status and message: ${error.message}`);
     return response.sendStatus(error.status);
   }
-  //------------------------------------------------
-  // MONGO ERRORS
-  //------------------------------------------------
+
   let message = error.message.toLowerCase();
 
   if(message.includes('validation failed')){
@@ -37,11 +33,7 @@ module.exports = (error,request,response,next) => {
     logger.log('info','Responding with a 401 status code');
     return response.sendStatus(401);
   }
-  //------------------------------------------------
-  // ANOTHER LIBRARY
-  //------------------------------------------------
-  //------------------------------------------------
-  logger.log('info','Responding with a 500 status code');
-  logger.log('info',error);
-  return response.sendStatus(500);
+  // logger.log('info','Responding with a 500 status code');
+  // logger.log('info',error);
+  // return response.sendStatus(500);
 };
