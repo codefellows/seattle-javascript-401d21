@@ -53,7 +53,7 @@ class BinaryTree {
   }
 ```
 
-[TreeNode Implementation](old-binary-tree.js)
+[Non-TreeNode Implementation](old-binary-tree.js)
 ```js
 class BinaryTree {
   constructor(value, left, right) {
