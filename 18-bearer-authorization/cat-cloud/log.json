@@ -1,0 +1,31 @@
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T17:46:42.432Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T17:46:42.545Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T17:47:17.167Z"}
+{"level":"info","message":"Processing : GET on : /login","timestamp":"2017-12-20T17:47:17.326Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-20T17:47:17.327Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T17:47:17.339Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T18:33:54.125Z"}
+{"level":"info","message":"Processing : GET on : /login","timestamp":"2017-12-20T18:33:54.279Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T18:33:54.344Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T18:34:31.959Z"}
+{"level":"info","message":"Processing : GET on : /login","timestamp":"2017-12-20T18:34:32.104Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T18:34:32.143Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T18:34:54.448Z"}
+{"level":"info","message":"Processing : POST on : /signup","timestamp":"2017-12-20T18:34:54.555Z"}
+{"level":"info","message":"Processing : POST on : /signup","timestamp":"2017-12-20T18:34:54.641Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2017-12-20T18:34:54.645Z"}
+{"message":"__ERROR__ username, email, and password required to create an account","stack":"BadRequestError: __ERROR__ username, email, and password required to create an account\n    at Object.<anonymous>.authRouter.post (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/route/auth-router.js:15:91)\n    at Layer.handle [as handle_request] (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/express/lib/router/route.js:137:13)\n    at /home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:224:16)\n    at done (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:273:7)\n    at emitNone (events.js:105:13)\n    at IncomingMessage.emit (events.js:207:7)\n    at endReadableNT (_stream_readable.js:1059:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"info","timestamp":"2017-12-20T18:34:54.645Z"}
+{"level":"info","message":"Responding with a 400 status and message: __ERROR__ username, email, and password required to create an account","timestamp":"2017-12-20T18:34:54.645Z"}
+{"level":"info","message":"Processing : GET on : /login","timestamp":"2017-12-20T18:34:54.688Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T18:34:54.718Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T20:15:50.982Z"}
+{"level":"info","message":"Processing : POST on : /profiles","timestamp":"2017-12-20T20:15:51.402Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T20:15:51.447Z"}
+{"level":"info","message":"Server is listening on port 7000","timestamp":"2017-12-20T20:15:51.864Z"}
+{"level":"info","message":"Processing : POST on : /signup","timestamp":"2017-12-20T20:15:51.868Z"}
+{"level":"info","message":"Processing : POST on : /signup","timestamp":"2017-12-20T20:15:51.906Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2017-12-20T20:15:51.909Z"}
+{"message":"__ERROR__ username, email, and password required to create an account","stack":"BadRequestError: __ERROR__ username, email, and password required to create an account\n    at Object.<anonymous>.authRouter.post (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/route/auth-router.js:15:91)\n    at Layer.handle [as handle_request] (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/express/lib/router/route.js:137:13)\n    at /home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:224:16)\n    at done (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/vladimirsan/workspace/seattle-javascript-401d19/18-bearer-authorization/cat-cloud/node_modules/raw-body/index.js:273:7)\n    at emitNone (events.js:105:13)\n    at IncomingMessage.emit (events.js:207:7)\n    at endReadableNT (_stream_readable.js:1059:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"info","timestamp":"2017-12-20T20:15:51.909Z"}
+{"level":"info","message":"Responding with a 400 status and message: __ERROR__ username, email, and password required to create an account","timestamp":"2017-12-20T20:15:51.909Z"}
+{"level":"info","message":"Processing : GET on : /login","timestamp":"2017-12-20T20:15:51.944Z"}
+{"level":"info","message":"Server off","timestamp":"2017-12-20T20:15:51.971Z"}
