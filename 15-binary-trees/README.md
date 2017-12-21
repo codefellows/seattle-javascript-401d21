@@ -6,7 +6,12 @@
 
 ## What is a Tree?
 
-Trees are a widely used data structure that simulate a hierarchical "tree" structure. These data structures contain a **root**, which may or may not contain a series of child sub-trees. They can also be defined recursively as a collection of nodes, which starts at the root node and each node is a data structure consisting of a value and an array of references to any child nodes. Trees are also considered to be a directed, acyclic, connected graph.
+Trees are a widely used data structure that simulate a hierarchical "tree"
+structure. These data structures contain a **root**, which may or may not
+contain a series of child sub-trees. They can also be defined recursively as a
+collection of nodes, which starts at the root node and each node is a data
+structure consisting of a value and an array of references to any child nodes.
+Trees are also considered to be a directed, acyclic, connected graph.
 
 ## Breaking Down A Tree
   * **root:** - the top node in a tree

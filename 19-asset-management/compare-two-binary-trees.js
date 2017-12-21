@@ -1,9 +1,36 @@
-compare two binary trees in order or any traversal as long as the nodes are the same in both traversals
+class SingleClassBinaryTree{
+  constructor(value){
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
-* if the nodes are the same return true
-* if the nodes are not the same return false
+const compareTree = (one, two) => {
+  if(one == null && two == null) return true;
+  else if(one !== null && two !== null){
+    return compareTree(one.left, two.left) && compareTree(one.right, two.right);
+  }
+  else return false;
+}
 
-```js
+let one = new SingleClassBinaryTree(1);
+let two = new SingleClassBinaryTree(2);
+let three = new SingleClassBinaryTree(3);
+let four = new SingleClassBinaryTree(4);
+let five = new SingleClassBinaryTree(5);
+
+
+one.left = two;
+one.right = three;
+
+three.left = four;
+three.right = five;
+
+console.log("tree1 compared to tree1?", compareTree(one, one));
+console.log("tree1 compared to tree3?", compareTree(one, three));
+console.log();
+
 class TreeNode {
   constructor(value, left, right){
     this.value = value;
@@ -60,38 +87,4 @@ tree3.root = three;
 
 console.log("tree1 compared to tree1?", tree1.compareTree(tree1));
 console.log("tree1 compared to tree3?", tree1.compareTree(tree3));
-```
 
-```js
-class SingleClassBinaryTree{
-  constructor(value){
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
-const compareTree = (one, two) => {
-  if(one == null && two == null) return true;
-  else if(one !== null && two !== null){
-    return compareTree(one.left, two.left) && compareTree(one.right, two.right);
-  }
-  else return false;
-}
-
-let one = new SingleClassBinaryTree(1);
-let two = new SingleClassBinaryTree(2);
-let three = new SingleClassBinaryTree(3);
-let four = new SingleClassBinaryTree(4);
-let five = new SingleClassBinaryTree(5);
-
-
-one.left = two;
-one.right = three;
-
-three.left = four;
-three.right = five;
-
-console.log("tree1 compared to tree1?", compareTree(one, one));
-console.log("tree1 compared to tree3?", compareTree(one, three));
-```
