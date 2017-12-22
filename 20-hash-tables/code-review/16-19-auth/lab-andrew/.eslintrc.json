@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "jest": true,
+    "es6": true
+  },
+  "globals": {
+    "err": true,
+    "req": true,
+    "res": true,
+    "next": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "space-infix-ops": ["error", {"int32Hint": false}],
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": [ "error", "always" ]
+  }
+}
