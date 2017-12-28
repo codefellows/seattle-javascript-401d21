@@ -1,4 +1,4 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 19: Continous Integration and Deployment 
+![cf](http://i.imgur.com/7v5ASc8.png) 21: Continous Integration and Deployment 
 ===
 
 ## Learning Objectives
