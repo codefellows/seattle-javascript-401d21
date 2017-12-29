@@ -1,132 +1,135 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 03: Asynchronous Callbacks
 =====================================
 
-## Learning Objectives
-* Students will understand how synchronous and asynchronous code runs in the Javascript runtime
+# Learning Objectives
+* Students will understand the how synchronous and asynchronous code runs in the Javascript runtime
 * Students will be able to manage asynchronous data flow using error first callbacks
-* Students will be able to utilize the asynchronous methods from built-in node modules
-* Students will be able to work with raw data using Buffers
+* Students will be able to utilize the asynchronous methods on the built-in Node modules
+* Students will be able to work with raw data using Node's Buffers
 * Students will be able to test asynchronous code using a BDD testing framework
 
-## Resources
-* Watch [what the heck is the event loop anyway](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-* Read [fs module docs](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html)
-* Read [Understanding error first callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+# Resources
+* Watch [What the Heck is the Event Loop Anyway](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+* Read [Understanding Error First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+* Skim [Node's File System Module Docs](https://Nodejs.org/dist/latest-v9.x/docs/api/fs.html)
+* Skim [Node's buffer documentation](https://Nodejs.org/api/buffer.html#buffer_buffer)
 
-## Javascript Runtime
-There are many Javascript runtimes. V8 is the name of the runtime used in the Chrome web browser and NodeJS. V8 will be used in the following descriptions of how a Javascript runtime works, but other browsers and Javascript environments have the same behaviors.
+# Javascript Runtime
+* There are many Javascript runtimes.
+* V8 is the name of the runtime used in Chrome browsers and NodeJS.
+* V8 will be used in the following descriptions of how JavaScript a runtime works, but other browsers and JavaScript environments have the same behaviors.
 
-#### Hoisting
-In Javascript, variable and function declarations get "hoisted" to top of your code before it runs. When the Javascript runtime executes your code, it first reorganizes what you have written so that all variable and function definitions are at the top of their current function scope. Developers that are new to Javascript often find hoisting strange, but it is a feature of the language that cannot be disabled. Learn to use hoisting as a tool!
+# Hoisting
+* When the JavaScript runtime executes your code, it first reorganizes what you have written so that all variable and function definitions are at the top of their current function scope.
+* Only declarations are hoisted, not the initialization
+  * Declaring a variable is the actual creation of a variable, not the initialization
+    * Initialization refers to when a variable is assigned a value
+* Example:
+  ```Javascript
+    adder(num1, num2);
 
-``` javascript
-// code before hoisting (how a programmer wrote the code)
-var chars = ['a', 'b', 'c'];
-var result = upperCharList(chars);
-console.log(result);
+    var num1 = 10;
+    var num2 = 20;
 
-function upperCharList(list){
-  var result = [];
-  for(var i=0; i<list.length; i++){
-    var upper = list[i].toUpperCase());
-    result.push(upper);
-  }
-  return result;
-}
-```
+    function adder(a, b) {
+      return a + b;
+    };
+  ```
+* In the above example, we are still able to call our `adder` function as the function declaration has been hoisted to the top of the current scope
+  * **Note:** function declarations take precedence over variable declarations
+* Developers that are new to Javascript often find hoisting strange, but its a feature of the language that cannot be disabled.
 
-``` javascript
-// after hoisting (how the code actually runs)
-var chars, result;
-function upperCharList(list){
-  var result, i, upper;
-  result = [];
-  for(i=0; i<list.length; i++){
-    upper = list[i].toUpperCase();
-    result.push(upper);
-  }
-  return result;
-}
+# Concurrency
+* In programing, concurrency means that a program can run more than one thing at a time.
+* The ability to do multiple things at a time can greatly increase the amount of things your program can do in a given moment in time. However, traditional means of handling concurrency are extremely complex, and often lead to bugs!
+* Javascript is a single threaded language.
+  * Which means that it can only do a single thing at a time.
+  * However, the JavaScript runtime is setup in such a way that your programs can still have some concurrent behavior, as long as the concurrent behavior is not implemented in JavaScript.
 
-chars = ['a', 'b', 'c'];
-result = upperCharList(chars);
-console.log(result)
-```
+## Node's Concurrency
+* The Node C++ apis are written in such a way that they deal with all the complexities of concurrency for us!
+  * We are programming at a higher abstraction - removing the need to deal with lower level threading
+  * The NodeJS event loop operates under a single thread
+    * NodeJS uses many threads "underneath the hood" (libuv)
+* NodeJs concurrency through the use of events and callbacks
+  * When a JavaScript function makes a call to Node APIs, it passes the Node API a callback.
+    * The Node api does it thing
+    * Passes its results into the callback
+    * Enqueues the callback onto the callback queue
+### Call Stack
+* The stack keeps track of each function that is currently running in JavaScript
+* At any given point in time JavaScript is only running the function on top of the call stack
+* Each time a function gets invoked it gets pushed onto the call stack
+* Each time a function returns it gets popped from the call stack
+### Event Loop
+* when NodeJS starts up, it processes the input script then begins processing the event loop
+* The event loop constantly checks if the call stack is empty
+* When the stack is empty it dequeues any functions on the callback queue and pushes them onto the stack
+### Callback Queue
+  * The callback queue holds completion handling functions from passed Node APIs
+  * Functions stored on the Callback Queue are not executing, they are only waiting to be put on to the Call Stack.
 
-#### Call Stack
-In Javascript, every synchronous function that is called is pushed onto a stack in V8. The function on top of the stack is always the function that is currently executing. When the function that is running returns it is popped off a stack. This stack is referred to as a **Call Stack**. V8 has a single Call Stack, therefor only one function can be running at a time. The Call Stack is always printed to the screen when an error is thrown, which helps developers to trace where errors have occurred in their code.
-
-#### Callback Queue
-When an asynchronous function called *"foo"* is invoked, it is pushed onto the V8 **call stack**. Then *"foo"* makes a call to a browser/NodeJS API and passes on a callback. Then the *"foo"* function returns and is popped of the call stack, and V8 keeps on executing synchronous code. Meanwhile, the external browser/NodeJS API is still running. Once the external API has completed it's task, it will pass any results into the callback and enqueue the callback on V8's **callback queue**. Functions stored on the callback queue are not executing, they are only waiting to be put onto the call stack.
-
-#### Event Loop
-The event loop is in charge of dequeueing callbacks from the V8 callback queue and pushing them on to the call stack. It has one rule for doing this. It will only push a callback on to the call stack if it is empty.
-* when the call stack pops its last function
-  * the event loop will check if any callbacks are in the callback queue
-  * if it finds a callback it will dequeue it from the callback queue and push it onto the call stack
-* when both the call stack and callback queue are empty
-  * the event loop will watch the callback queue for new callbacks
-  * when a callback is included it will immediately be dequeued and pushed onto the call stack
-
-## NodeJS Callback Pattern
-NodeJS made the decision to have all asynchronous events be handled using error first callbacks. The main advantage of this is that all asynchronous methods have a consistent interface. This means that when you are working with asynchronous NodeJS code, you can always assume how the callback is going to be formatted, making your life as a developer much easier!
-
-Having a consistent callback interface has also made it possible for libraries to be written that assist Javascript developers in handling complex async code!
-
-#### Defining an error first callback
-* a callback is simply a function that is passed as an argument to another function
-* "error first" callbacks have the function signature `(err, result) => {}`
-  * the first parameter is reserved for an error
-    * the value will be `null` or `undefined` if there is no error
-  * the second callback is reserved for any successful response data
-    * the value will be `null` or `undefined` if there is no data
-    * not every NodeJS method passes data into the callback
-    * in methods that do not resolve data, success is defined as a lack of an error
-
-## File System I/O
-The NodeJS `fs` module gives NodeJS programmer's the ability to perform file system operations. The `fs` module has the ability to Create, Read, Update, and Delete files using many different methods. Most methods on the `fs` module have synchronous and asynchronous implementations. Synchronous methods end in _Sync_, like `fs.readFileSync`, and asynchronous method's lack the word _Sync_ in their names, like `fs.readFile`. This naming pattern is true across all of the built-in NodeJS modules. Synchronous methods block Javascript from executing further code until they finish. This can be a huge drawback, therefor synchronous methods are rarely used in web server development.
-
-``` javascript
-// example of how to copy a file using NodeJS
-const fs = require('fs')
-const inputFile = './path/to/input.txt'
-const outputFile = './path/to/output.txt'
-
-fs.readFile(inputFile, (err, buffer) => {
-  if(err) throw err
-  fs.writeFile(outputFile, buffer, (err) => {
-    if(err) throw err
-    console.log('done')
-  })
-})
-```
-
-## Buffer
-Buffers are NodeJS built-in constructors for working with binary data, also called raw data. Buffer is a global constructor in NodeJs. When reading from the filesystem, network, or elsewhere data is usually presented to the developer in the form of a buffer. Buffers are an array of bytes, with many useful methods for reading and writing data. The data in buffers can be decoded as integers, floating point numbers, and strings.
-
- ```
-   var data = new Buffer('welcome to bufferville') // create a buffer using a string
-   console.log(data) // looks like hex when console logged, but its a buffer not a string!!!!
-
-   console.log(data.toString()) // prints the original string
-   console.log(data.toString('hex')) // prints the strings data as hex digits
-   console.log(data.toString('utf8', 0, 1)) // prints the character stored in the first byte
-   console.log(data.readUInt8()) // prints the integer stored in the first byte
-   console.log(data.readFloatLE()) // prints the floating point number stored in the first 4 bytes
- ```
+## Node asynchronous callback pattern
+* Node functions that have asynchronous input or output take a callback as the last argument
+  * Node functions that do not pass back data always have callback functions take the form `(err) => { }`
+  * Node functions that do pass back data always have callback functions take the form `(err, data) => { }`
 
 
-## Asynchronous Testing
-Testing frameworks like **MochaJS**, **Jasmine**, and **Jest** support testing asynchronous code by giving us a callback to invoke when our assertions are done. Tests have two seconds to call a  `done` callback before a timeout error occurs. The testing frameworks will treat any value passed into the `done` callback as an error.
+# Working With Binary Data (Part 1)
+## Bits and bytes
+* A bit is the smallest unit of data in a computer
+  * A bit contains a single binary value, 0 or 1
+* A byte is comprised of 8 bits
+  * We often refer to a nibble as 4 bits (half of a byte)
+## Endianness
+* Refers to the order of bytes
+* Little endian
+  * Bytes are written from left to right
+* Big endian
+  * Bytes are written from right to left
+## Buffers
+* Buffers are an array of bytes
+* Example:
+  ```Javascript
+    var buff = Buffer.from('Welcome to Bufferville');
+    console.log(buff);
+    <Buffer 77 65 6c 63 6f 6d 65 20 74 6f 20 62 75 66 66 65 72 76 69 6c 6c 65>
+  ```
+* Common encoding types:
+  * UTF-8 (default)
+    * `buff.toString('utf-8')`
+  * Base64
+    * `buff.toString('base64')`
+  * Hex
+    * `buff.toString('hex')`
 
-``` javascript
-// example using done in "it" tests
-it('true should be true', (done) => {
-  setTimeount(() => {
-    expect(true).toBe(true)
-    done()
-    // done('any value`) // passing a value into done makes the test fail
-  }, 0)
-  // invoking done here will be a false positive
-})
-```
+## File System (a.k.a FS) Module
+* The FS module is the Node interface to the file system
+* The FS module has synchronous and asynchronous methods
+* If the method does not have sync in its name you can assume its synchronous
+* In this class we will **NEVER** use the synchronous methods
+* Useful globals
+  * `__dirname` - the absolute path to the directory the current file is in
+  * `__filename` - the absolute path to the current file
+* Create File
+  * `fs.writeFile(filepath, data [, options], callback);`
+  * The callback should take the form `(error) => {}`
+* Read File
+  * `fs.readFile(filepath [, options], callback);`
+  * The callback should take the form `(error, data) => {}`
+* Delete File
+  * `fs.unlink(filepath, callback);`
+  * The callback should take the form `(error) => {}`
+* Other useful methods
+  * `readdir` - reads the contents of a directory
+  * `mkdir` - create a directory
+  * `stat` - get information about a file/dir/link
+  * `watch` - watch a file for changes
+
+#### Asynchronous Testing
+ * **Calling `done`**
+   * Jest gives us a short timeframe to call `done` before a timeout error occurs
+     * be sure to call `done` in the appropriate location (usually, this in your internal logic)
+     * calling `done` in the wrong block will likely cause a false positive test result
+
+ * **demo:** testing file system I/O

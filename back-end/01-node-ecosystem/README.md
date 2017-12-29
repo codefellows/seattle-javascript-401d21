@@ -1,52 +1,142 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
 =====================================
 
-## Learning Objectives
-* Students will be able to setup a NodeJS Package using npm
-* Students will be able to create commonjs modules
-* Students will be able to to create unit tests for synchronous Javascript code
-* Students will be able to use to test driven development methodologies
+# Learning Objectives
+* Students will be able to set up a node project
+* Students will be able to create node modules that conform to the CommonJS module pattern
+* Students will be able to construct and run unit tests
+* Students will be able explain the TDD philosophy of red, green, refactor
 
-## Resources
-* Read [about nodejs]
-* Skim [libuv docs]
-* Skim [about v8]
-* Read [what is npm]
-* Read [just another guide to ES6]
-* Skim [node and es6 docs]
-* Read [a gentle intro to tdd in js]
-* Read [jest getting started guide]
+-----
 
-## Use Your Computer Like A Developer
-It's time to unlearn any bad computer usage habits that you may have developed in your pre-programmer years. It is critical that you keep your file system organized. Writing code is difficult enough, so don't allow your problem to be finding your code on the file system. You should also come up with a system for naming your files, and never deviate from it!!! Keep all of your projects in one place, and always use version control. Use git best practices, even when you are working on personal projects! Use the command line whenever possible.  In the long run, it will save you many hours of time.
+## Readings
+### Node.js
+* Read [About Node]
+* Read/Skim [Node Modules](https://nodejs.org/docs/latest/api/modules.html#modules_modules)
+* Skim [Node API](https://nodejs.org/docs/latest-v7.x/api/)
+* Skim [About V8]
+* Skim [What is NPM]
 
-#### File Naming Tips
-Name all of your files using cabob-case ("-" separated words). Don't use uppercase letters, unless you want the file to appear first when you run `ls`. In git projects, it is standard to capitalize **README.md** for this reason.
+### Test-Driven Development
+* Read [A Gentle Intro to TDD in JS]
+  * Read only part 1
+  * We'll be using a different framework (Mocha) than the one used in this article, but most of the concepts and principles are applicable to the framework we'll be using (Jest)
+* Read [Getting Started with Jest](https://facebook.github.io/jest/docs/en/getting-started.html)
+* Skim [Expect Docs](https://facebook.github.io/jest/docs/en/expect.html)
 
-## NodeJS
-NodeJS is an open source framework for writing javascript on your operating system. NodeJS is compromised of the **V8** Javascript runtime, and the **NodeAPIs**. V8 supports many features in the latest version of Javascript, called ES6 (or ES2015), which has added many new syntax features and optimizations. **V8** is the Javascript runtime developed for the Chrome browser, and is written in C and C++. The Node APIs are written in C, C++, and Javascript. Node was developed to enable developers to easily write code with asynchronous input and output (IO). In many other languages, asynchronous IO creates a lot of work for developers, and can be error prone. NodeJS uses an event loop driven and non-blocking architecture, that enables NodeJS to have very low overhead when it is not running. NodeJS has an incredibly rich ecosystem of packages available through the use of the Node Package Manager (NPM).
+### ES6
+* Read [Just Another Guide to ES6]
+* Skim [Node's ES6 Docs]
+
+-----
+
+## Setting up a development workspace
+Before people are developers, they often develop many habits they will need to unlearn:
+* Use the command line whenever possible. In the long run it will save you a lot of time.
+* It is highly important to keep our file system organized.
+  * If your problem is finding your code, you are in deep trouble!.
+  * Create a dir structure for keeping track of you class work.
+* File naming tips
+  * Never put space bars in your file names.
+  * Use `-` or `_` instead. But choose one and stick with it... don't use both!.
+  * Never use capital letters in your filenames, unless its convention (like README.md).
+    * Some file systems (like osx) don't keep track of Case and will cause git issues.
+``` text
+ * $HOME/
+  | - Desktop/
+  | - Downloads/
+  | - ...
+  | - cf-401/
+  |   | - labs/
+  |   |   | - lab-01-node-ecosystem
+  |   |   | - lab-02-tools-and-context
+  |   |   | - ...
+  |   | - lecture-notes/
+  |   |   | - class-01-node-ecosystem
+  |   |   | - class-02-tools-and-context
+  |   |   | - ...
+  ```
+## Node.JS
+* Node is an asynchronous, event-driven runtime used to build back-end (a.k.a Server Side) JavaScript applications.
+* Node uses an "event loop" to work only when events are triggered.
+    * When Node has no work to be done, Node sleeps.
+* Node input and output (I/O) is non-blocking.
+  * This save developers from having to worry about concurrent programming patterns.
+* At a high level, Node is composed of two main components:
+  * __Javascript API__ :
+    * Internally, Node uses [libuv](https://github.com/libuv/libuv) for I/O.
+  * __V8 Javascript engine__
+* Node's documentation has a stability index.
+  * 0 - deprecated - don't use the feature.
+  * 1 - Experimental - don't use this feature in something you care about.
+  * 2 - Stable - fine to use.
+  * 3 - Locked - fine to use.
+* *Make sure you read the docs for the version of node you're using.*
+
+## NPM
+* NPM is a package manager for installing javascript libraries.
+* NPM is composed of the following.
+  * A registry where all the packages are hosted.
+  * A search engine where you can find packages.
+  * A CLI where that helps you interface with the registry.
+  * A for profit organization.
 
 ## CommonJS modules
-NodeJS supports CommonJS modules, enabling developers to organize their code into small files that define specific functionality. This plays a huge role in allowing Javascript developers to build large scale applications. In a CommonJS module, anything that is assigned to `module.exports` can be accessible to another modules module through invoking the `require` function. The `require` function expects a relative or absolute path to the module being imported, like `require('./relative/path/to/the/module.js')`. CommonJS modules can not be co-dependent, meaning that if module "A" requires module "B" then "B" can not also require "A".
+* Modules are used to break down applications into smaller pieces.
+* Why are modules useful?
+  * The common `<script src=""></script>` pattern used to work with JavaScript loads variables and functions into global scope.
+  * Relying in the global space is error-prone due to naming conflicts and unexpected side-effects.
+  * Modules allow us to explicitly define what's loaded in the global scope.
+    * This plays a huge role in allowing Javascript developers to build large scale applications.
 
-## Test Driven Development
-Test driven development (TDD) is a methodology for writing code. TDD relies on a very short development cycle, which means that it expects developers to create small and testable features. TDD can speed up development time, validate the integrity of new code, and help developers understand their goals. TDD is broken down into three steps - `red`, `green`, and `refactor`.
+### Using CommonJS modules
+* In Node.js, every JavaScript file is a module.
+* CommonJS modules work based on 2 main elements:
+  * The `module.exports` object
+    * Anything that is assigned to module.exports can be accessed by other modules via the `require` function.
+    * Everything else will be hidden from other modules.
+  * The `require` function
+    * Searches and loads CommonJS modules.
+    * The require function expects a relative or absolute path to the module being imported.
+      * Like: `require('./relative/path/to/the/module.js')`.
+* CommonJS modules cannot be co-dependent
+  * If module "A" requires module "B" then "B" can not also require "A".
+* *ES6 introduced a different module format that is not compatible with CommonJS modules.*
+   * *At this time, both ES6 and CommonJS modules are common in JavaScript codebases, so we'll learn both in this course.*
 
-###### RED
-Make a plan for the code that needs to be written, in order to solve your goal. Write tests that will run your code and check for expected behaviors. At this point, if you run your tests, they should fail (red).
+## Testing and TDD
+* TDD is a software development process where you write tests before you write code.
+* It relies on a very short development cycle.
+  * It encourages to build small things at a time.
+### TDD Process
+* This process is called __red, green, refactor__:
+* __Red__
+  * Bake a plan for the features needed to make a program work.
+  * Choose a feature to implement.
+  * Write code that tests that features behavior.
+  * The tests now should fail, because the feature has not been implemented.
+* __Green__
+  * Write the feature itself.
+  * The tests now should pass, because the feature has been implemented.
+* __Refactor__
+  * Refactor you code to optimize it.
+  * The tests should still pass, because the behavior should not have changed.
 
-###### GREEN
-Write code to pass the specifications of your tests, without making it perfect. If you succeed, when you run your tests, they should pass (green).
-
-###### REFACTOR
-Refactor your code for speed, memory optimization, and most importantly **readability**. Your tests should still pass after this step.
+## Jest
+* Jest is a testing framework.
+  * Its job is to facilitate writing and running tests.
+* Expect is an assertion library.
+  * Its job facilitate writing expectations and then throw errors when the expectations are not met.
+* When testing with jest, we'll primarily work with 3 functions:
+  * `descride`
+  * `test`
+  * `expect`
 
 <!--links -->
-[about nodejs]: https://nodejs.org/en/about/
-[node and es6 docs]: https://nodejs.org/en/docs/es6/
-[libuv docs]: https://github.com/libuv/libuv
-[about v8]: https://developers.google.com/v8/
-[what is npm]: https://docs.npmjs.com/getting-started/what-is-npm
-[a gentle intro to tdd in js]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
-[jest getting started guide]: https://facebook.github.io/jest/docs/en/getting-started.html
-[just another guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin
+[About Node]: https://nodejs.org/en/about/
+[Node's ES6 Docs]: https://nodejs.org/en/docs/es6/
+[libuv Docs]: https://github.com/libuv/libuv
+[About V8]: https://developers.google.com/v8/
+[What is NPM]: https://docs.npmjs.com/getting-started/what-is-npm
+[A Gentle Intro to TDD in JS]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
+[Just Another Guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin

@@ -10,14 +10,14 @@
 * Read [basic auth](https://en.wikipedia.org/wiki/Basic_access_authentication)
 
 ## User Modeling
-Modern web applications need to model sensitive information about their users. When a users provides an applications with sensitive information, they are trusting that it will not leaked are misused. This means its a developers responsibility to store that information responsibly. Some information like emails, usernames, and addresses can be stored in plain text, as long as the database is password protected and or behind a firewall. Other information like a users password should be encrypted using a hashing algorithm before it is ever stored, preventing anyone (including developers with database permissions) from ever getting access to their password.  
+Modern web applications need to model sensitive information about their users. When a users provides an applications with sensitive information, they are trusting that it will not leaked are misused. This means its a developers responsibility to store that information responsibly. Some information like emails, usernames, and addresses can be stored in plain text, as long as the database is password protected and or behind a firewall. Other information like a users password should be encrypted using a hashing algorithm before it is ever stored, preventing anyone (including developers with database permissions) from ever getting access to their password.
 
 User models that have sensitive data should **NEVER** be sent to client applications. If your application requires that users be able to read each others personal information, create a second Profile model to hold that data, and strictly limit access controls to the Profile model. Safely using a second model will ensure that no users will accidentally or maliciously get access to sensitive information.
 
 ## Cryptography
-> The science which studies methods for encoding messages so that they can be read only by a person who knows the secret information required for decoding, called the key; it includes cryptanalysis, the science of decoding encrypted messages without possessing the proper key, and has several other branches.  
+> The science which studies methods for encoding messages so that they can be read only by a person who knows the secret information required for decoding, called the key; it includes cryptanalysis, the science of decoding encrypted messages without possessing the proper key, and has several other branches.
 
-\- [GNU Collaborative International Dictionary of English](http://gcide.gnu.org.ua)
+- [GNU Collaborative International Dictionary of English](http://gcide.gnu.org.ua)
 
 #### Hash Algorithms
 A Cryptographic Hash Algorithm takes a piece of data and produces a hash that is deliberately difficult to reverse. If identical data is passed into the algorithm the same hash will always be produced. Hash algorithms are often used for checking the integrity of data.
