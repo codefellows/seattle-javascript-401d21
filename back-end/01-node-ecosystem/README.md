@@ -1,6 +1,23 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 01: Node Ecosystem
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind? _expect this question every day!_
+
+- Course Overview
+    - 1st Half _Node, Express, MongoDB_
+    - 2nd Half _React & Redux_
+    - Daily Whiteboarding _Process introduction_
+    - Git/Github & Other Tools
+
+- Developer Environment _You should not be thinking much about it at this point_
+- NodeJS _Reintroduction_
+- CommonJS Modules _and a quick chat about import/export_
+- Testing with Jest _Test Driven Development_
+- Lab Preview
+
+
 # Learning Objectives
 * Students will be able to set up a node project
 * Students will be able to create node modules that conform to the CommonJS module pattern
@@ -20,7 +37,7 @@
 ### Test-Driven Development
 * Read [A Gentle Intro to TDD in JS]
   * Read only part 1
-  * We'll be using a different framework (Mocha) than the one used in this article, but most of the concepts and principles are applicable to the framework we'll be using (Jest)
+  * We'll be using a different framework than the one used in this article, but most of the concepts and principles are applicable to the framework we'll be using (Jest)
 * Read [Getting Started with Jest](https://facebook.github.io/jest/docs/en/getting-started.html)
 * Skim [Expect Docs](https://facebook.github.io/jest/docs/en/expect.html)
 
