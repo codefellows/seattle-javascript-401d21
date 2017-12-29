@@ -15,8 +15,7 @@
 * Read [just another guide to ES6]
 * Skim [node and es6 docs]
 * Read [a gentle intro to tdd in js]
-* Read [expect docs](http://chaijs.com/api/bdd/)
-* Read [mocha getting started guide]
+* Read [jest getting started guide]
 
 ## Use Your Computer Like A Developer
 It's time to unlearn any bad computer usage habits that you may have developed in your pre-programmer years. It is critical that you keep your file system organized. Writing code is difficult enough, so don't allow your problem to be finding your code on the file system. You should also come up with a system for naming your files, and never deviate from it!!! Keep all of your projects in one place, and always use version control. Use git best practices, even when you are working on personal projects! Use the command line whenever possible.  In the long run, it will save you many hours of time.
@@ -49,5 +48,5 @@ Refactor your code for speed, memory optimization, and most importantly **readab
 [about v8]: https://developers.google.com/v8/
 [what is npm]: https://docs.npmjs.com/getting-started/what-is-npm
 [a gentle intro to tdd in js]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
-[mocha getting started guide]: http://mochajs.org/#getting-started
+[jest getting started guide]: https://facebook.github.io/jest/docs/en/getting-started.html
 [just another guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin
