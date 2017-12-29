@@ -1,7 +1,0 @@
-# Created by Vinicio Vladimir Sanchez Trejo
-
-**/node_modules/*
-**/vendor/*
-**/*.min.js
-**/coverage/*
-**/build/*
