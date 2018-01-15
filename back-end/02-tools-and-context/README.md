@@ -1,6 +1,22 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 02: Tools and Context
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Code Review
+- Review Package.json / `npm init`
+    - Requirements of a `package.json`
+- SemVer _Semantic Versioning_
+- Errors!! _The Developers Best Friend (period)_
+    - Handling thrown errors w/ `try/catch`
+- Working with Context (`this`)
+    - Apply, Call, and Bind methods
+        - Apply: Array args
+        - Call: Comma-separated args
+        - Bind: 'Bring on the `this`!' #wat
+
 ## Learning Objectives
 * Students will be able to define npm scripts for automating command line tasks
 * Students will be able to control function context by using `call`, `apply`, and `bind`

@@ -4,18 +4,26 @@
 ## Daily Plan
 - Notes:
     - Anything top of mind? _expect this question every day!_
+    - Housekeeping Items _see whiteboard_
 
 - Course Overview
     - 1st Half _Node, Express, MongoDB_
     - 2nd Half _React & Redux_
-    - Daily Whiteboarding _Process introduction_
-    - Git/Github & Other Tools
+    - Daily Process Introduction _Normally_
+        - 9a: Lecture
+        - 12p: Lunch
+        - 1p: Whiteboard challenge
+        - 130p - 6p: Labs
 
+- Git/Github & Other Tools
 - Developer Environment _You should not be thinking much about it at this point_
 - NodeJS _Reintroduction_
+    - Strict Mode: Use. Always. It's helping your code run as optimal as possible for the JS Engine!
 - CommonJS Modules _and a quick chat about import/export_
 - Testing with Jest _Test Driven Development_
-- Lab Preview
+- Lab & Whiteboard Challenge Preview
+    - Whiteboarding Process _Time permitting_
+
 
 
 # Learning Objectives
