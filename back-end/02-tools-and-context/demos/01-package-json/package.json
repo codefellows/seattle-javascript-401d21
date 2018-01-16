@@ -1,0 +1,26 @@
+{
+  "name": "01-package-json",
+  "version": "0.0.0",
+  "description": "package.json demo for 401d21",
+  "main": "index.js",
+  "scripts": {
+    "test:start": "jest --verbose",
+    "test:watch": "jest --watch",
+    "start": "nodemon index.js",
+    "start:debug": "",
+    "start:watch": ""
+  },
+  "keywords": [
+    "package.json",
+    "npm",
+    "init",
+    "yadda",
+    "yadda"
+  ],
+  "author": "Code Fellows",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.1",
+    "nodemon": "^1.14.11"
+  }
+}
