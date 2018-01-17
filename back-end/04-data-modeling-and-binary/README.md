@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 04: Data Modeling and Binary Data
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Code Review
+
+
+- Lab Preview
+
+
 ## Bitmap Resources
 * Read [bitmap file format]
 * Read  [node buffer api docs]

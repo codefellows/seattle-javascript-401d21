@@ -1,6 +1,27 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 03: Asynchronous Callbacks
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Career Coaching Assignments _heads up that they're coming!!_
+
+- Node Callback Pattern
+- The Event Loop
+- Recursion
+    - Quick code challenge _sum all numbers from 0 to n_
+    - Lets solve it with a call stack exercise
+- Async (concurrency)
+- FS Module _working with the file system_
+    - Buffers _Introduction_
+- Testing Async Code
+  - Tell it when it can be `done` OR just `return` the async code...
+
+- Lab Preview
+    - Lab Setups _Code challenges and general labs_
+    - Whiteboard Process Discussion
+
+
 # Learning Objectives
 * Students will understand the how synchronous and asynchronous code runs in the Javascript runtime
 * Students will be able to manage asynchronous data flow using error first callbacks
@@ -18,26 +39,6 @@
 * There are many Javascript runtimes.
 * V8 is the name of the runtime used in Chrome browsers and NodeJS.
 * V8 will be used in the following descriptions of how JavaScript a runtime works, but other browsers and JavaScript environments have the same behaviors.
-
-# Hoisting
-* When the JavaScript runtime executes your code, it first reorganizes what you have written so that all variable and function definitions are at the top of their current function scope.
-* Only declarations are hoisted, not the initialization
-  * Declaring a variable is the actual creation of a variable, not the initialization
-    * Initialization refers to when a variable is assigned a value
-* Example:
-  ```Javascript
-    adder(num1, num2);
-
-    var num1 = 10;
-    var num2 = 20;
-
-    function adder(a, b) {
-      return a + b;
-    };
-  ```
-* In the above example, we are still able to call our `adder` function as the function declaration has been hoisted to the top of the current scope
-  * **Note:** function declarations take precedence over variable declarations
-* Developers that are new to Javascript often find hoisting strange, but its a feature of the language that cannot be disabled.
 
 # Concurrency
 * In programing, concurrency means that a program can run more than one thing at a time.
