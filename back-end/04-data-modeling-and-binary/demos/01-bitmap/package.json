@@ -1,0 +1,16 @@
+{
+  "name": "01-bitmap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.3"
+  }
+}

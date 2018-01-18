@@ -1,6 +1,15 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) Lab 06: TCP Server
 ======
-## Learning Objectives  
+
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - What's happening this week
+
+- Code Review
+-
+
+## Learning Objectives
 * Students will learn how to network computers by implementing a TCP server
 * Students will learn to describe computer networking using the OSI model
 * Students will learn to describe computer networking using the Internet Protocol Suite
@@ -12,14 +21,14 @@
 ## EventEmitter
 Much of the NodeJS architecture is built around the use of events. All objects that emit events in NodeJS are instances of the EventEmitter constructor. EventEmitter's are a great way to handle controlling asynchronous events. Functions can be registered as listeners for an event on instances of the EventEmitter class.  These instances can emit events and pass the listeners data.
 
-## OSI Model  
+## OSI Model
 Programmers and engineers have been able to network computers since the early 1970s. As the needs of networked computers evolved, there where many solutions developed to connect two ore more computers together, and share information between them. Over time, several different conceptual models have also been developed to help describe the different networking solutions. In the mid 1980s the _"Open Systems Interconnection Reference Model"_ (OSI model) was developed as a seven layer model. This seven layer OSI model has continued to accurately describe the different processes in computer networking, and is still widely used as a point of reference while working in networked systems today. A programer or engineer is usually responsible for the goals of a specific layer and communicating with the layer above and below. Not every computer network solution uses all seven layers, for example HTTP skips the Presentation an Session layers and lives directly on top of the Transport layer.
 
 
-| # | Layer | Protocol Data Unit | Function | Examples |   
+| # | Layer | Protocol Data Unit | Function | Examples |
 | --- | ---- | ----- | ----- | ----- |
-| 7 | Application | Data | Hight Level APIs | HTTP, IMAP, POP, SSH |  
-| 6 | Presentation | Data | Data translating, including encryption, character encoding, and compression | Strings encoded with null terminated strings vs Strings defined by an Integer Length |  
+| 7 | Application | Data | Hight Level APIs | HTTP, IMAP, POP, SSH |
+| 6 | Presentation | Data | Data translating, including encryption, character encoding, and compression | Strings encoded with null terminated strings vs Strings defined by an Integer Length |
 | 5 | Session | Data | Manages a session though passing data back and fourth | NetBios and Remote Procedure Protocol (RPC) |
 | 4 | **Transport** | Segment / Datagram | Reliable transmission of data between points on a network | TCP and UDP |
 | 3 | Network | Packet | Managing the network through addressing, routing, and traffic control | IP and ICMP
@@ -56,7 +65,7 @@ Byte 20: Options
 * a 16 bit `source port`
 * a 16 bit `destination port`
 * a 32 bit `sequence number` that sets the initial sequence number and manages the accumulated sequence number.
-* if ACK is set it contains a 32 bit `acknowledgement number` that is the next sequence number that the sender is expecting. It is used for acknowledging the bytes it has so far received.  
+* if ACK is set it contains a 32 bit `acknowledgement number` that is the next sequence number that the sender is expecting. It is used for acknowledging the bytes it has so far received.
 * a 4 bit `data offset` specifies the size of the tcp header in 32 bit words.
 * 9 flag bits
   * `NS` - an experimental feature for a nonce sum. a nonce is a random cryptographic number used to prevent people from lying about who they are (authentication).

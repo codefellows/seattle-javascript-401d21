@@ -1,0 +1,17 @@
+{
+  "name": "00-code-review",
+  "version": "1.0.0",
+  "description": "Code review of class 03 - async callbacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.2"
+  }
+}

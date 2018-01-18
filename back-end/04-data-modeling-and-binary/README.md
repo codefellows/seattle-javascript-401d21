@@ -4,11 +4,15 @@
 ## Daily Plan
 - Notes:
     - Anything top of mind?
+    - Learning Journals
 
 - Code Review
-
-
-- Lab Preview
+    - TDD approach
+    - Focus on the callback pattern
+- Working with Binary data
+- Buffers
+- Bitmap File Data Review _lets set up a constructor_
+- Lab Preview _Canvas has groups set up already_
 
 
 ## Bitmap Resources
@@ -40,9 +44,9 @@ places    43210
 _______________
 value     06974
 
-6974 base 10 is the same as (6 * 10^3) + (9 * 10^2) + (7 * 10^1) + (8 * 10^0)
-6974 base 10 is the same as (6 * 1000) + (9 * 100) + (7 * 10) + (8 * 1)
-6974 base 10 is the same as (6000) + (900) + (70) + (8)
+6974 base 10 is the same as (6 * 10^3) + (9 * 10^2) + (7 * 10^1) + (4 * 10^0)
+6974 base 10 is the same as (6 * 1000) + (9 * 100) + (7 * 10) + (4 * 1)
+6974 base 10 is the same as (6000) + (900) + (70) + (4)
 6974 base 10 is the same as 6974
 
 ----------------------------------------------------------------------
@@ -51,12 +55,12 @@ HOW BINARY WORKS
 
 places    43210
 _______________
-value     01011
+value     1010
 
-1010 base 2 is the same as (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (1 * 2^0)
-1010 base 2 is the same as (1 * 8) + (0 * 4) + (1 * 2) + (1 * 1)
-1010 base 2 is the same as (8) + (0) + (2) + (1)
-1010 base 2 is the same as 11
+1010 base 2 is the same as (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0)
+1010 base 2 is the same as (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)
+1010 base 2 is the same as (8) + (0) + (2) + (0)
+1010 base 2 is the same as 10
 
 ----------------------------------------------------------------------
 
@@ -82,6 +86,7 @@ DEC |HEX |BIN
 13  |d   |1101
 14  |e   |1110
 15  |f   |1111
+16  |10  |0001 0000
 ```
 * to convert to floating points is a little takes the binary to decimal idea a little further by using it for scientific notation
 * to convert to text there is an encoding called ascii which maps all characters to a corresponding number
@@ -95,19 +100,19 @@ Raw dat is stored as instances of the Buffer class A buffer is similar to an arr
 The Buffer class is a global, making it very rare that one would need to ever require('buffer').
 
 * A Buffer represents arrays of bytes
- * A byte is made of of 8 bits
- * A bit is a single one or zero
+    * A byte is made of 8 bits
+    * A bit is a single one or zero
 * Each byte in a buffer can be decoded as an integer, floating point number, or a string
 * Integers and Floats come in different sizes 8bit, 16bit, 32bit
 * Strings come in different encodings 'hex', 'utf8', 'base64' ...
 * Buffers are often referred to as raw data, meaning just a bunch of zeros and ones
 * Many of the Node APIs use buffers as the data type when dealing with input and output
 * Your OS stores binary in one of two ways
- * `little endian` - most significant bit first
- * `big endian` - least significant bit first
-* In a node **REPL** you can un `os.endianness()` to determine how your os stores bytes
- * `'LE'` == little endian
- * `'BE'` == big endian
+    * `little endian` - most significant bit first
+    * `big endian` - least significant bit first
+* In a node **REPL** you can run `os.endianness()` to determine how your os stores bytes
+    * `'LE'` == little endian
+    * `'BE'` == big endian
 * Make sure your using the methods that correspond to your systems **endianness**
 
 ###### Creating buffers
@@ -128,9 +133,9 @@ The Buffer class is a global, making it very rare that one would need to ever re
 
 ###### copying, slice, and concat
 * ` buf.copy( targetBuffer, *targetStart, *sourceStart, *sourceEnd)`
- * create a new buffer
+    * create a new buffer
 * ` buf.slice(*start, *end) `
- * create a  a new buffer witch references the same memory as the old by offset and cropped by start, end
+    * create a  a new buffer witch references the same memory as the old by offset and cropped by start, end
 * ` Buffer.concat(list, *totalLength) ` concatenates the buffers in the list
 
 ###### indexing a buffer
@@ -138,8 +143,8 @@ The Buffer class is a global, making it very rare that one would need to ever re
 
 ###### fill a buffer
 * ` buff.fill(value, *offset, *end) ` fills the buffer with the specified value
- * **offset** - number of bytes into array, Defaults: 0
- * **end** - number of bytes into array to stop, Defaults, buffer.length
+    * **offset** - number of bytes into array, Defaults: 0
+    * **end** - number of bytes into array to stop, Defaults, buffer.length
 
 ###### writing integers
 * ` writeUInt16LE(value, offset, *noAssert)`
@@ -148,9 +153,9 @@ The Buffer class is a global, making it very rare that one would need to ever re
 * ` writeInt16LE(value, offset, *noAssert)`
 * ` writeInt32LE(value, offset, *noAssert)`
 * ` writeInt8(value, offset, *noAssert)`
- * **value** - Number to write
- * **offset** - number of bytes into array
- * **noAssert** - Boolean,  set to true to skip validation off offset
+    * **value** - Number to write
+    * **offset** - number of bytes into array
+    * **noAssert** - Boolean,  set to true to skip validation off offset
 
 ###### reading integers
 * `readUInt16LE(offset, *noAssert)`
@@ -163,32 +168,31 @@ The Buffer class is a global, making it very rare that one would need to ever re
 * `readInt32LE(offset, *noAssert)`
 * `readInt32BE(offset, *noAssert)`
 * `readInt8(offset, *noAssert)`
- * **offset** - number of bytes into array
- * **noAssert** - Boolean,  set to true to skip offset validation
+    * **offset** - number of bytes into array
+    * **noAssert** - Boolean,  set to true to skip offset validation
 
 
 ###### writing strings
- * ``` buf.write(string, *offset, *length, *encoding)```
- * offset defaults to 0
- * encoding defaults to utf8
- * if buffer did not contain enough space to fit the entire string it will write a partial amount of the string.
- * length defaults to buffer.length
+* ``` buf.write(string, *offset, *length, *encoding)```
+* offset defaults to 0
+* encoding defaults to utf8
+* if buffer did not contain enough space to fit the entire string it will write a partial amount of the string.
+* length defaults to buffer.length
 
 ###### reading strings
 * ``` buf.toString(*encoding, *start, *end) ``` decodes and returns a string from buffer data
- * **encoding** - String, Default: 'utf8'
- * **start** - Number, Default: 0
- * **end** - Number, Default: buffer.length
- * Converting between buffers and strings requires a specific encoding
-  * `acii` - for 7 bit ASCII data
-  * `utf8` - for multibyte encoded unicode characters
-  * `utf16le` - 2 or 4 byte, little endian unicode
-  * `ucs2` - alias of utf16le
-  * `base64` - Base64 string encoding
-  * `hex` - encode each byte as two hexadecimal characters
+    * **encoding** - String, Default: 'utf8'
+    * **start** - Number, Default: 0
+    * **end** - Number, Default: buffer.length
+    * Converting between buffers and strings requires a specific encoding
+        * `acii` - for 7 bit ASCII data
+        * `utf8` - for multibyte encoded unicode characters
+        * `utf16le` - 2 or 4 byte, little endian unicode
+        * `ucs2` - alias of utf16le
+        * `base64` - Base64 string encoding
+        * `hex` - encode each byte as two hexadecimal characters
 
 <!--links -->
-[events api docs]: https://nodejs.org/api/events.html
 [bitmap file format]: https://en.wikipedia.org/wiki/BMP_file_format
 [node buffer api docs]: https://nodejs.org/api/buffer.html
 [endian and little endian]: https://www.youtube.com/watch?v=B50mNoVw21k
