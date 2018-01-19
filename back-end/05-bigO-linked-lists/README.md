@@ -1,6 +1,25 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 05: Big-O Notation & Linked Lists
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- ...
+    - Code Challenge!!
+    - Close your lids.
+    - Write a function that takes a string (sentance) as it's only argument, and returns the string with each word reversed.
+        - `input = "mary had a little lamb whose fleece was white as snow"`
+        - `output = "yram dah a elttil bmal esohw eceelf saw etihw sa wons"`
+
+- Whiteboard Process Overview
+    - See [Rubric](whiteboard-rubric.pdf)
+- Abstract Data Structures _why?_
+- Big O Notation
+- Linked Lists _introduction_
+- Lab Preview
+
+
 ## Learning Objectives
 * students will be able to implement a linked list
 * students will be able to determine and describe the runtime complexity of an algorithm
@@ -8,11 +27,10 @@
 ## Resources
 * Watch [linked lists]
 * Skim [linked list wiki]
-* Watch [linked lists]
-* Skim [linked list wiki]
 * Read [simple wiki big o]
 * Watch [hacker rank big o video]
 * Read at [big o cheat sheet]
+
 ## Overview
 
 ![linked-list](https://s3-us-west-2.amazonaws.com/slugbyte-assets/linked-list.svg)
