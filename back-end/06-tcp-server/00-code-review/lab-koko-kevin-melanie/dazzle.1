@@ -1,0 +1,73 @@
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.Dd 01/21/18            
+.Dt dazzle 1     
+.Os Darwin
+.Sh NAME                 
+.Nm dazzle
+.Nd a command line bitmap transformer
+.Sh SYNOPSIS             
+.Nm
+.Pa Ar bitmap_file_path 
+.Ar Ar new_file_name                
+.Ar Ar transform_method                 
+.Sh DESCRIPTION          
+The
+.Nm
+command line utility allows the user to transform a 
+.Pp
+bitmap image using any of the nine transform methods.  A new
+.Pp
+copy of the image is created with the supplied name.
+.Pp
+dazzle takes three arguments
+.Pp
+.Bl -tag -width -indent 
+.Ao 
+bitmap_file_path 
+.Ac 
+-  the path to a bitmap image to transform
+.Pp
+.Ao 
+new-file-name 
+.Ac 
+-  the name for the new bitmap image
+.Pp
+.Ao 
+transform-method 
+.Ac 
+-  the name of the transformation
+.Pp
+.El                     
+.Pp
+Transform Methods:
+.Bl  -tag -width -indent 
+.It Ar random                
+Randomize the color palette of the image
+.It Ar reverse                
+Description of -a flag
+.It Ar boostGreen
+Sets the green values to 255
+.It Ar boostRed                
+Sets the red values to 255
+.It Ar boostBlue
+Sets the blue values to 255
+.It Ar redChannel                
+Creates a gray scale image based on the value of the red value
+.It Ar blackWhite
+Creates a gray scale image based on the average value of the rgb values
+.It Ar invert
+Inverts the rgb values
+.It Ar invert2
+Inverts every fourth bit in the color palette
+.It Ar invert3
+Inverts every third bit in the color palette
+.It Ar invert4
+Inverts every other bit in the color palette
+.El                      
+.Sh Example
+.Pp
+.D1 dazzle ~/users/home/pictures/test.bmp dazed.bmp boostGreen
+.Sh SEE ALSO
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.Lk https://www.codefellows.org

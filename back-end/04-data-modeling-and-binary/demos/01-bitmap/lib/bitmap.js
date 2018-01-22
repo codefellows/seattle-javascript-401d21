@@ -8,4 +8,5 @@ module.exports = function(buffer) {
   this.width = buffer.readUInt32LE(18)
   this.height = buffer.readUInt32LE(22)
   this.pixelArray = buffer.slice(54, this.offset)
+  this.colorTable = buffer.slice(this.offset)
 }

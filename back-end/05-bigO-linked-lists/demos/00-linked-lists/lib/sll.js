@@ -3,6 +3,8 @@
 const Nd = require('./nd')
 // import Nd from './nd'
 
+// module.exports = class SLL {
+
 class SLL {
   constructor() {
     this.head = null
@@ -38,4 +40,4 @@ class SLL {
   }
 }
 
-module.exports = SLL
+// module.exports = SLL

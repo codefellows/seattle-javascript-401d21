@@ -6,8 +6,12 @@
     - Anything top of mind?
     - What's happening this week
 
-- Code Review
--
+- Code Review _Bitmap or Linked Lists?_
+- Event Emitters
+- OSI Model
+    - Transmission Control Protocol
+- TCP Server! _including tests!_
+- Lab Preview
 
 ## Learning Objectives
 * Students will learn how to network computers by implementing a TCP server

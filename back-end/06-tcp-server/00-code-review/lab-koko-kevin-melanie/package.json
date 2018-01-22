@@ -1,0 +1,36 @@
+{
+  "name": "lab-koko-kevin-melanie",
+  "version": "1.0.0",
+  "description": "lab 04 bitmap transformer",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "bin": {
+    "dazzle": "index.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "man": "dazzle.1",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "melanie, koko, kevin",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.3"
+  }
+}
