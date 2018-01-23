@@ -8,7 +8,7 @@ const cmd = require('./lib/cmd')
 // Application setup
 const server = module.exports = net.createServer()
 const PORT = process.env.PORT || 3000
-const clientPool = []
+let clientPool = []
 
 // Server instance setup
 server.on('connection', function(socket) {

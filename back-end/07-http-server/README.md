@@ -1,6 +1,21 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 07: HTTP Server
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Pre-work: Node Beginner Book
+
+- Code Review _Test the TCP server_
+- Web URLs
+- Protocols
+- HTTP
+- TDD setup _this is Scott's note so he doesn't get sidetracked and forget!_
+- Building a vanilla HTTP server
+    - HTTP Request tools
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will learn to read and write HTTP Request and Response packets
 * Students will be able to create HTTP servers for handling HTTP requests
@@ -29,11 +44,11 @@ A HTTP/1.1 request is formatted in text and transferred using TCP. The first lin
 | TRACE 	| No	      | Yes	| Yes | Yes	| No | Echos retrieved request |
 | PATCH  	| Yes	      | Yes	| No	| No	| No | Partial modification of resource |
 
-`Safe` methods should only be used for information retrieval and should not change the server state.  
-`Idempotent` methods means if two identical requests are made they should get an identical response.  
-`Cacheable` means the client should be able to cache the response.  
+`Safe` methods should only be used for information retrieval and should not change the server state.
+`Idempotent` methods means if two identical requests are made they should get an identical response.
+`Cacheable` means the client should be able to cache the response.
 
-###### Example HTTP Request  
+###### Example HTTP Request
 ```
 POST /api/note HTTP/1.1
 Host: api.example.com
