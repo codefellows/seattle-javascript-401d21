@@ -5,14 +5,18 @@
 - Notes:
     - Anything top of mind?
     - Pre-work: Node Beginner Book
+    - Survey comments:
+        - Introductions! We never really did those...
+        - Assignment specs _Are they better?_
+        - Sleep... Make time for sleep!
 
 - Code Review _Test the TCP server_
-- Web URLs
-- Protocols
 - HTTP
+    - URLs, Protocols, Headers
+- Promise Introduction
 - TDD setup _this is Scott's note so he doesn't get sidetracked and forget!_
 - Building a vanilla HTTP server
-    - HTTP Request tools
+    - HTTP Request tools (HTTPie, Postman, etc)
 - Lab Preview
 
 
@@ -26,7 +30,7 @@
 * Skim [wiki list of status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 ## [HTTP](https://tools.ietf.org/html/rfc7231)
-The Hyper Text Transfer Protocol (HTTP) is a stateless request-response application layer protocol. HTTP is used to build distributed, collaborative, hypermedia information systems. HTTP is the foundation for the world wide web. Applications built using HTTP subscribe to the client-server computing model. In the client-server computing model a host designed to provide a service is called a server and clients are hosts that make requests to the service. The HTTP specification defines how requests and responses should be formatted, but not what a service should represent. HTTP is often associated with serving `.html` files but is also used to transfer images, videos, json, xml, binary executables, and much more.
+The Hyper Text Transfer Protocol (HTTP) is a stateless request-response application layer protocol. HTTP is used to build distributed, collaborative, hypermedia information systems. HTTP is the foundation for the world wide web. Applications built using HTTP subscribe to the client-server computing model. In the client-server computing model a host designed to provide a service is called a server and clients are hosts that make requests to the service. The HTTP specification defines how requests and responses should be formatted, but not what a service should represent. HTTP is often associated with serving `.html` files but is also used to transfer images, videos, json, xml, binary executable, and much more.
 
 #### HTTP Requests
 A HTTP/1.1 request is formatted in text and transferred using TCP. The first line of the request contains the `METHOD`, `URL`, and `HTTP VERSION`. The following lines are the request `HEADERS`. Each header is separated by a newline character. A header is a key value pair separated using a colon. Headers containing more than one value separate each value using a semicolon. The header section of the request is terminated with an empty line. An optional body follows the header section.
@@ -44,9 +48,9 @@ A HTTP/1.1 request is formatted in text and transferred using TCP. The first lin
 | TRACE 	| No	      | Yes	| Yes | Yes	| No | Echos retrieved request |
 | PATCH  	| Yes	      | Yes	| No	| No	| No | Partial modification of resource |
 
-`Safe` methods should only be used for information retrieval and should not change the server state.
-`Idempotent` methods means if two identical requests are made they should get an identical response.
-`Cacheable` means the client should be able to cache the response.
+- `Safe` methods should only be used for information retrieval and should not change the server state.
+- `Idempotent` methods means if two identical requests are made they should get an identical response.
+- `Cacheable` means the client should be able to cache the response.
 
 ###### Example HTTP Request
 ```

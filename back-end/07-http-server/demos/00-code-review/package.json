@@ -1,0 +1,40 @@
+{
+  "name": "lab-daniel",
+  "version": "0.0.0",
+  "description": "TCP chat lab",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "keywords": [
+    "tcp",
+    "chat",
+    "jest-attempt"
+  ],
+  "author": "Daniel",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
