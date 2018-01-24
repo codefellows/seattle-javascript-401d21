@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 08: REST
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Kick-off meeting for Instructors and Staff today _What's the plan?_
+
+- Code Review _top of mind questions?_
+- RESTful Architecture
+- Let's build it all from scratch!!!!!!!!!!
+- Lab Preview
+
 ## Learning Objectives
 * Students will learn to use ES6 Promises to manage asynchronous Javascript
 * Students will learn to build RESTful HTTP servers
@@ -20,7 +30,7 @@ A URI is a string of characters used to identify a resource. A URI could be an b
 ```
 
 ## [REST](https://www.w3.org/2001/sw/wiki/REST)
-The HTTP specification describes an interface for making requests to an HTTP server, but does not provide semantic guidelines on how that interface should be used. There are many semantic schemas for how HTTP servers should be designed, but Representational State Transfer (REST) is the most common. REST places constraints on how servers can manage requests in order to improve scalability, simplicity, modifiability, visibility, portability, and reliability. RESTful services must subscribe to a client-server architecture in-order to separate the user interface concerns from data storage concerns. RESTful services must be stateless, which prevents the server manage session state and forces all requests to contain all the information necessary to service the request. RESTful services must support caching. RESTful services should support a layered system, which means clients should not care if the server is the end server or an intermediary server (load balancer or cache).  RESTful services should enforce a uniform interface that follows four specific constraints.
+The HTTP specification describes an interface for making requests to an HTTP server, but does not provide semantic guidelines on how that interface should be used. There are many semantic schemas for how HTTP servers should be designed, but Representational State Transfer (REST) is the most common. REST places constraints on how servers can manage requests in order to improve scalability, simplicity, visibility, portability, and reliability. RESTful services must subscribe to a client-server architecture in-order to separate the user interface concerns from data storage concerns. RESTful services must be stateless, which prevents the server manage session state and forces all requests to contain all the information necessary to service the request. RESTful services must support caching. RESTful services should support a layered system, which means clients should not care if the server is the end server or an intermediary server (load balancer or cache).  RESTful services should enforce a uniform interface that follows four specific constraints.
 
 #### Four User Interface Constraints
 | Constraint | Explanation |
@@ -52,8 +62,8 @@ Promises are objects that represent an asynchronous event that will either succe
   * **rejected** - the operation failed
 
 #### Promise Static methods
-  * `Promise.all(array)` - returns a `Promise` object that fulfills when all of the promises in an array have succeded or one has failed
-  * `Promise.race(array)` - returns a `Promise` object that fulfills when one of the promises in an array has succeded or failed
+  * `Promise.all(array)` - returns a `Promise` object that fulfills when all of the promises in an array have succeeded or one has failed
+  * `Promise.race(array)` - returns a `Promise` object that fulfills when one of the promises in an array has succeeded or failed
   * `Promise.reject(value)` - returns a `Promise` object that is rejected with a given value
   * `Promise.resolve(value)` - returns a `Promise` object that is resolved with a given value
 

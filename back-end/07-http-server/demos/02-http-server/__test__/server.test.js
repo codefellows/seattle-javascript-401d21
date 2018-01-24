@@ -27,7 +27,12 @@ describe('Server module', function() {
     })
   })
 
-  // describe('Invalid Request to the API', () => {
-
-  // })
+  describe('Invalid Request to the API', () => {
+    it('should return a 404 status code', () => {
+      return superagent.get(':4444/doesNotExist')
+      .catch(err => {
+        expect(err.status).toBe(404)
+      })
+    })
+  })
 })
