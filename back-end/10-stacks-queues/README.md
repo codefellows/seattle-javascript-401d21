@@ -10,19 +10,9 @@
 * Students will understand the inner workings or Binary Search
 
 ## Resources
-* Read [YDKJS: This and Object Prototypes](https://github.com/getify/You-Dont-Know-JS/tree/master/this%20%26%20object%20prototypes)
 * Watch [stacks and queues](https://www.youtube.com/watch?v=wjI1WNcIntg)
 * Read [stack wiki](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 * Skim [queue wiki](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
-
-#### Doubly Linked List
-* there are no FILO/FIFO-style constraints on doubly linked lists
-* doubly linked lists contain a series of nodes where each node contains a value, a `next` property, and a `prev` property - these properties point to the previous and next node in a line of interconnected nodes
-* Operations that can be performed on singly linked lists include:
-  * insertion (ie: `append` and `prepend` methods)
-  * deletion (ie: `remove` method)
-  * traversal (ie: `find` method)
-* doubly linked lists generally contain pointers to both the head and the tail
 
 #### Stacks
 Stacks are a data structure that serve as a collection of elements. These elements are stacked in a last in, first out sequence **(aka LIFO - last in first out)**. It may help to think about a stack as a collection of plates and the way that you add and remove them.
