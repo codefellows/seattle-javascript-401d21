@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 09: Vanilla REST API with Persistence
 =====================================
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Code Review
+- Testing HTTP
+- File System Storage??
+    - Just a look at how to promisify a library that's callback-based
+- Lab Preview
+
 # Readings
 * Read [a brief history of databases](http://avant.org/project/history-of-databases/)
 
