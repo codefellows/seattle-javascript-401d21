@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 10: Doubly Linked Lists, Stacks, Queues & Binary Search
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Data Structures Repos _at some point..._
+
+- Code Review _Implement FS Storage_
+- Stacks & Queues
+- Lab Preview
+
+
 ## Learning Objectives
 * students will be able to implement a doubly linked list
 * Students will be able to implement a stack
@@ -11,15 +21,11 @@
 
 ## Resources
 * Watch [stacks and queues](https://www.youtube.com/watch?v=wjI1WNcIntg)
-* Read [stack wiki](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+* Skim [stack wiki](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 * Skim [queue wiki](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
 #### Stacks
-Stacks are a data structure that serve as a collection of elements. These elements are stacked in a last in, first out sequence **(aka LIFO - last in first out)**. It may help to think about a stack as a collection of plates and the way that you add and remove them.
-
-Stacks are often used for:
-  * history capability with undo functionality
-  * call stack management
+Stacks are a data structure that serve as a collection of elements. These elements are stacked in a last in, first out sequence **(aka FILO - first in, last out)**. It may help to think about a stack as a collection of plates and the way that you add and remove them.
 
 Common methods include:
   * `pop` removes the most recent element from the stack
