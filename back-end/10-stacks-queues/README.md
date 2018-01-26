@@ -6,13 +6,13 @@
     - Anything top of mind?
     - Data Structures Repos _at some point..._
 
-- Code Review _Implement FS Storage_
+- Code Review _Implement FS Storage?_
 - Stacks & Queues
 - Lab Preview
 
 
 ## Learning Objectives
-* students will be able to implement a doubly linked list
+* Students will be able to implement a doubly linked list
 * Students will be able to implement a stack
 * Students will be able to identify use cases for a stack
 * Students will be able to implement a queue

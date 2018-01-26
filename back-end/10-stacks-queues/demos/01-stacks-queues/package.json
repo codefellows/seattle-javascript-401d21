@@ -1,0 +1,19 @@
+{
+  "name": "01-stacks-queues",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
