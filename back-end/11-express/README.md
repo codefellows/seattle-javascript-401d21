@@ -1,6 +1,17 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 11: ExpressJS
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Week ahead, week behind
+        - quick note about last week's workload
+
+- Code Review?
+- Express Framework
+    - API Data Flow
+- Lab Preview
+
 ## Learning Objectives
 * Students will learn about ExpressJS
 * Students will be able to create RESTful HTTP servers through the use of Express
