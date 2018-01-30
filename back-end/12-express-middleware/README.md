@@ -1,6 +1,20 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Follow-ups from yesterday
+      - Router vs App
+      - Error Handler mistake
+
+- Express Middleware
+    - CORS, Body Parser, Routes, Error Handler, etc...
+    - Pre-flight Requests _quick notes_
+- Test All the Things!!
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will be able to create and use Express middleware
 * Students will learn about Cross Site Origin Resource Scripting (CORS)
