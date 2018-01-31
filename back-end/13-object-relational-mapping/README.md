@@ -1,6 +1,19 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 13: MongoDB & Object Relational Mapping
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Career Coaching Schedule / Assignments
+
+- Code Review
+- MongoDB
+- Mongoose / ORMs
+    - Pagination _quick review and notes about implementation_
+- Build an API
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will be able to persist data using MongoDB
 * Students will learn about Object Relation Mapping (ORM)
@@ -25,7 +38,7 @@ Although MongoDB has many great features for build modern web application, it is
 
  If your application is depending on doing many of these operations, you may want to consider using other database technologies.
 
-MongoDB, like many databases, is built on the client-server model. A MongoDB Server called a Mongo [Daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) is run as a background task on a host. A Client such as a MongoDB Shell or MongoDB Driver can connect to the MongoDB Dameon to run queries. MongoDB Drivers are libraries that enable developers to make queries from a programing language.
+MongoDB, like many databases, is built on the client-server model. A MongoDB Server called a Mongo [Daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) is run as a background task on a host. A Client such as a MongoDB Shell or MongoDB Driver can connect to the MongoDB Daemon to run queries. MongoDB Drivers are libraries that enable developers to make queries from a programing language.
 
 
 ## ORMs and ODMs
@@ -34,8 +47,8 @@ Object Relational Mapping (ORM) is a programming technique for converting relati
 ## Mongoose Example
 ```js
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/test', { useMongoClient: true })
+// mongoose.Promise = global.Promise; // We no longer need to do this!!
+mongoose.connect('mongodb://localhost/test')
   .then(createCat)
   .catch(err => console.log(err.message));
 

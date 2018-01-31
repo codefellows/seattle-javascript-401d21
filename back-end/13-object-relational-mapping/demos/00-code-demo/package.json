@@ -1,0 +1,50 @@
+{
+  "name": "daniel-lab-11",
+  "version": "0.0.0",
+  "description": "lab 11 demo work",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i",
+    "start:debug": "debug=http* node index.js"
+  },
+  "jest": {
+    "setupFiles": [
+      "./__test__/lib/jest-setup.js"
+    ],
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "keywords": [
+    "express",
+    "jest",
+    "npm",
+    "node"
+  ],
+  "author": "Daniel",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "jest": "^22.1.4",
+    "superagent": "^3.8.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "uuid": "^3.2.1"
+  }
+}
