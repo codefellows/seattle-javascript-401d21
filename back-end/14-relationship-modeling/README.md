@@ -1,6 +1,17 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 14: Relationship Modeling
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - [Sign up for 1:1s](https://calendar.google.com/calendar/selfsched?sstoken=UU1Zb1dLQnFZWTAyfGRlZmF1bHR8OTQzOGQxOWRhYTE2NDRhZGIzNzI0NDg5YTk0NjY0ZDU&pli=1)
+
+- Code Review _Review Mongoose Connection Updates_
+- Mongodb Relationships / Populations
+- Lifecycle Hooks _Middleware_
+- Testing _DB Mocks_
+- Lab Preview
+
 ## Learning Objectives
 * Students will learn about relationship modeling
 * Students will be able to create "one to one", "one to many", and "many to many" model relationships using a MongoDB ODM
