@@ -7,7 +7,7 @@
 
 - Code Review
 - Trees _k-ary, binary, AVL, graphs_
-    - Focus on Binary Trees today...
+    - Focus on K-ary Trees today...
 - Traversals _breadth first_
 - Lab Preview
 
