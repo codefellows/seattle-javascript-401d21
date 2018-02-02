@@ -44,16 +44,14 @@ Track.pre('save', function(next) {
 })
 
 // TODO: Need to Debug.
-// Track.post('remove', function(doc, next) {
-//   Album.findById(doc.album)
-//   .then(album => {
-//     console.log(album.tracks)
-//     album.tracks = album.tracks.filter(a => doc._id !== a)
-//     album.save()
-//     // might need to return the above line?? Not sure. Test it!
-//   })
-//   .then(next)
-//   .catch(next)
-// })
+Track.post('remove', function(doc, next) {
+  Album.findById(doc.album)
+  .then(album => {
+    album.tracks = album.tracks.filter(a => doc._id.toString() !== a.toString())
+    album.save()
+  })
+  .then(next)
+  .catch(next)
+})
 
 module.exports = mongoose.model('track', Track)

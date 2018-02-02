@@ -39,7 +39,15 @@ module.exports = function(router) {
   .delete((req, res) => {
     debug(`${req.method}: ${req.url}`)
 
-    Track.findByIdAndRemove(req.params._id)
+    // This code is what we wrote in lecture
+    // Track.findByIdAndRemove(req.params._id)
+    // .then(() => res.sendStatus(204))
+    // .catch(err => errorHandler(err, res))
+
+    // These are the updates. We have to explicitly call .remove() on the instance
+    // of track to trigger the `post-remove` hook.
+    Track.findById(req.params._id)
+    .then(track => track.remove())
     .then(() => res.sendStatus(204))
     .catch(err => errorHandler(err, res))
   })
