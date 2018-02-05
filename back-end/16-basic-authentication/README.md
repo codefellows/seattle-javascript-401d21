@@ -1,6 +1,17 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 16: Basic Authentication
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Week ahead
+
+- Code Review
+- AuthN / AuthZ
+- CFGram RESTful API
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will learn about cryptographic hash and cypher algorithms
 * Students will be able to model a User and safely store their sensitive data
@@ -15,7 +26,7 @@ Modern web applications need to model sensitive information about their users. W
 User models that have sensitive data should **NEVER** be sent to client applications. If your application requires that users be able to read each others personal information, create a second Profile model to hold that data, and strictly limit access controls to the Profile model. Safely using a second model will ensure that no users will accidentally or maliciously get access to sensitive information.
 
 ## Cryptography
-> The science which studies methods for encoding messages so that they can be read only by a person who knows the secret information required for decoding, called the key; it includes cryptanalysis, the science of decoding encrypted messages without possessing the proper key, and has several other branches.
+> The science which studies methods for encoding messages so that they can be read only by a person who knows the secret information required for decoding, called the key; it includes crypto-analysis, the science of decoding encrypted messages without possessing the proper key, and has several other branches.
 
 - [GNU Collaborative International Dictionary of English](http://gcide.gnu.org.ua)
 
