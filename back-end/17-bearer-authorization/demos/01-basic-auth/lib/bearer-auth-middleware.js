@@ -14,23 +14,22 @@ module.exports = function(request,response,next){
   if(!authHeader)
     return errorHandler(new Error(ERROR_MESSAGE),response);
   
-  let token = authHeader.split('bearer ')[1];
+  let token = authHeader.split('Bearer ')[1];
 
   if(!token)
     return errorHandler(new Error(ERROR_MESSAGE),response);
   
   // vinicio - at this point, we have a TOKEN
   // vinicio - verify === decrypt
-  jsonWebToken.verify(token,process.env.APP_SECRET,(error,decodedValue) => {
+  return jsonWebToken.verify(token,process.env.APP_SECRET,(error,decodedValue) => {
     if(error){// vinicio
       error.message = ERROR_MESSAGE;
       return errorHandler(error,response);
     }
     // vinicio - at this point, we have the tokenSeed / compareHash i.e. {token: mario}        
 
-    Auth.findOne({compareHash: decodedValue.token})
+    return Auth.findOne({compareHash: decodedValue.token})
       .then(user => {
-
         if(!user)
           return errorHandler(new Error(ERROR_MESSAGE),response);
         // vinicio - we are mutating the request with a user
