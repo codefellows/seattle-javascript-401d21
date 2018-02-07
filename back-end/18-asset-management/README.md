@@ -1,6 +1,18 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 18: Asset Management
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Challenge: Write an implementation of breadthFirst traversal
+
+- Code Review
+- AWS Introductions
+- Multi-part Form Data management
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will be able to upload static assets to AWS S3
 
