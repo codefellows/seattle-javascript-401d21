@@ -1,0 +1,52 @@
+$primary: #d6ca98;
+$secondary: #fff7d8;
+$black: #222;
+$white: #ddd;
+$gutter-sm: 2vw;
+$gutter-lg: $gutter-sm * 2;
+$font-primary: 'helvetica';
+$border: 1px solid black;
+$border-radius: 3px;
+
+body {
+  background: $secondary;
+  font-family: $font-primary;
+
+  .application {
+    width: 100%;
+  }
+
+  pre {
+    background: $black;
+    color: $white;
+    padding: $gutter-lg;
+    border-radius: $border-radius;
+
+    code {
+      max-width: 50%;
+      margin: $gutter-sm auto;
+      font-size: 2.5vw;
+    }
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  text-align-last: center;
+}
+
+button, select, option {
+  width: 100%;
+  padding: $gutter-sm;
+  margin: ($gutter-sm / 2) 0;
+  font-size: 2vw;
+  border-radius: $border-radius;
+  transition: 150ms;
+  background: $white;
+  border: 1px solid $black;
+
+  &:hover {
+    background: $primary;
+  }
+}
