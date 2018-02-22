@@ -33,10 +33,10 @@ class Dashboard extends React.Component{
   // Hooks
   //------------------------------------------------------
 
-  
+
   render(){
     return(
-      <div>
+      <div className="">
         <h1>Dashboard</h1>
         <ExpenseForm handleAddExpense={this.handleAddExpense}/>
         <ul>
