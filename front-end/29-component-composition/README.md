@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 29:  Component Composition
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Hash Tables
+- Code Review
+- Composition vs Inheritance
+- Building Reusable Components through `props.children`
+- Lab Preview
+
 ## Learning Objectives
 * Students will learn to about composition vs inheritance
 * Students will learn to compose react components using props
@@ -10,12 +20,10 @@
 * Read [Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
 * Read [Composition vs Inheritance](https://facebook.github.io/react/docs/composition-vs-inheritance.html)
 * Read [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
-* Skim [Jest Docs](https://facebook.github.io/jest/docs/en/getting-started.html)
-* Skim [Enzyme Docs](https://github.com/airbnb/enzyme)
 
 
 ## Component Composition
-#### Composition  
+#### Composition
 Some components don't know their children a head of time. React components can use the special `children` prop to pass children directly into their output. For example a `SpeechBubble` component could be passed a `SuccessMessage` or `ErrorMessage` component to be used as a child component.
 
 #### Specialization
