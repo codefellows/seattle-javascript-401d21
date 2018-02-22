@@ -6,10 +6,11 @@
     - Anything top of mind?
 
 - Hash Tables
-- Code Review
-- Composition vs Inheritance
+- Code Review: _Are we really solid on state and props?_
+- Composition vs Inheritance: _Just compose..._
 - Building Reusable Components through `props.children`
 - Lab Preview
+    - _reminder for scott... no CSS challenge this week. next week._
 
 ## Learning Objectives
 * Students will learn to about composition vs inheritance

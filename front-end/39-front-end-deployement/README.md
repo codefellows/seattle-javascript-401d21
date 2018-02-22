@@ -1,7 +1,9 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 39: SVGS and Fonts
+![cf](http://i.imgur.com/7v5ASc8.png) 39: TBD
 ===
 
 ## Learning Objectives
+<!-- * need more content here... svg and fonts isn't enough for a full day -->
+
 * Students will be able to load fonts with webpack
 * Students will be able to create icons using SVGs
 * Students will learn the difference between icon fonts and inline svgs
