@@ -1,6 +1,20 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 31: Redux
 ===
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Look ahead and this week...
+    - Survey feedback...
+
+- Code Review: _How do we feel about composition?_
+- Introduction to Redux's state management
+    - Setting up a Store
+    - Actions and Reducers
+    - Mapping state and dispatch to props
+- Lab Preview
+
+
 ## Learning Objectives
 * Students will learn to use redux with react
 * Students will learn to design redux reducer's for controlling application state
@@ -26,7 +40,7 @@ A redux store is created by passing a function called a **reducer** into `create
 A redux store has three methods `getState`, `dispatch`, and `subscribe`
 
 ###### dispatch
-Each time `dispatch` is invoked its first argument is passed into the reducers action parameter. In order to update the store you must organize your reducer in a way that enables meaningful changes based on values that are dispatched. The most common pattern for dispatching meaningful changes to reducers is by always dispatching objects that have a type and payload. The reducer can then make decisions of what to do with the payload based on the type property of the action dispatched.  
+Each time `dispatch` is invoked its first argument is passed into the reducers action parameter. In order to update the store you must organize your reducer in a way that enables meaningful changes based on values that are dispatched. The most common pattern for dispatching meaningful changes to reducers is by always dispatching objects that have a type and payload. The reducer can then make decisions of what to do with the payload based on the type property of the action dispatched.
 
 ``` javascript
 // example dispatch usage
@@ -35,7 +49,7 @@ store.dispatch({
   payload: {id: 'abc123', content: 'hello world'},
 })
 ```
-People often create helper functions called "action creators" that create action objects to be dispatched...  
+People often create helper functions called "action creators" that create action objects to be dispatched...
 ``` javascript
 // an action creator for creating notes
 const createNote = (note) => ({ type: 'CREATE_NOTE', payload: note })
