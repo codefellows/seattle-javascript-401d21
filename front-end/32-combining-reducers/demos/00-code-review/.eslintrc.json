@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "react/prop-types": [0],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "indent": [ "error", 2 ],
+    "semi": ["error", "always"]
+  },
+  "plugins": [ "react" ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "module": true,
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true,
+    "browser": true
+  },
+  "globals": {
+    "__API_URI__": false,
+    "__DEBUG__": false
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}

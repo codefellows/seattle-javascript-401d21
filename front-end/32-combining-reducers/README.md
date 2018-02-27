@@ -1,6 +1,16 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 32: Combining Reducers
 ===
 
+## Daily Plan
+- Notes
+    - Anything top of mind?
+
+- Code Review
+- Combining Reducers using Redux
+    - Adds a second resource to our kanban board
+- Testing our React/Redux App with Jest and Enzyme
+- Lab preview
+
 ## Learning Objectives
 * Students will learn to combine reducers to simplify the management of complex application state
 
