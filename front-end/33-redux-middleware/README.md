@@ -1,6 +1,15 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 33: Redux Middleware
 ===
 
+## Daily Plan
+- Notes
+    - Anything top of mind?
+
+- Code Review
+- Redux Middleware
+- Thunk
+- Lab Preview
+
 ## Learning Objectives
 * Students will be able to create middleware for redux
 * Students will be able to add third party middleware to redux
