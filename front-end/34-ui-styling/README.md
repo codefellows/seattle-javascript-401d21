@@ -1,7 +1,15 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 34: UI Styling
 ===
-
 ----
+
+## Daily Plan
+    - Anything top of mind?
+
+- Code Review
+- Review of SCSS: _What questions are there?_
+- Review of SMACSS-ish structure for component-based architecture
+- Custom forms: _Build a slider checkbox_
+- Lab Preview
 
 ## Learning Objectives
 * students will be able to use SCSS to create component based and modular CSS styles
