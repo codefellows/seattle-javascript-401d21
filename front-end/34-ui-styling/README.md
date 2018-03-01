@@ -3,6 +3,7 @@
 ----
 
 ## Daily Plan
+- Notes:
     - Anything top of mind?
 
 - Code Review

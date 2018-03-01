@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <main>
+    <form class="main-form" novalidate>
+
+      <div class="slider-checkbox">
+        <input id="slider" type="checkbox">
+        <label class="labels" for="slider"><div></div></label>
+      </div>
+
+      <div class="container">
+        <label for="validated-input">Text Input with Form Validation</label>
+        <input id="validated-input" type="text" placeholder="scottschmidt" pattern="[a-zA-Z]{4,16}" required>
+        <label id="input-error">Please enter a valid username</label>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
