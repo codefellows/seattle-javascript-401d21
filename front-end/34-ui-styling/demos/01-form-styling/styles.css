@@ -1,0 +1,87 @@
+* {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* SLIDER CHECKBOX */
+#slider {
+  display: none;
+}
+
+.labels {
+  width: 250px;
+  height: 150px;
+  border: 1px solid black;
+  display: block;
+  border-radius: 25px;
+  position: relative;
+  transition: 350ms;
+}
+
+.labels div {
+  border: 1px solid gray;
+  background-color: white;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transition: 350ms
+}
+
+input[type="checkbox"]:not(:checked) + label {
+  background-color: red;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: green;
+}
+
+input[type="checkbox"]:checked + label div {
+  left: 40%;
+}
+
+
+
+/* INPUT WITH VALIDATION */
+#validated-input {
+  border: 1px solid gray;
+  border-radius: 0;
+  padding: 1.75vw;
+}
+
+#validated-input:focus {
+  outline: none;
+}
+
+.container {
+  width: 80%;
+  margin: 4vw auto;
+  font-family: helvetica;
+  position: relative;
+}
+
+.container label {
+  display: block;
+  font-weight: bold;
+  padding: 2vw 0;
+}
+
+#input-error {
+  visibility: hidden;
+  position: absolute;
+  color: red;
+  font-size: 2vw;
+  right: -68%;
+}
+
+#validated-input:not(:placeholder-shown):invalid {
+  border: 3px solid red;
+}
+
+#validated-input:not(:placeholder-shown):invalid + #input-error {
+  visibility: visible;
+}

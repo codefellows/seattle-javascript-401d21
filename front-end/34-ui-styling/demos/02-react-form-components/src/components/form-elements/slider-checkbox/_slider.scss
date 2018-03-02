@@ -1,0 +1,38 @@
+@import '../../../styles/vars.scss';
+
+.slider-checkbox {
+  width: 3em;
+  height: 2em;
+
+  * {
+    transition: 350ms;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $bg_off;
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    padding-top: 0.1em;
+    padding-left: 0.2em;
+    margin: 1em 0;
+  }
+
+  div {
+    width: 0.6em;
+    height: 0.6em;
+    background: white;
+    border-radius: 2em;
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: $bg_on;
+    padding-left: 2em;
+  }
+}
