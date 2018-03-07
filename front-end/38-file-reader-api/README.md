@@ -1,8 +1,24 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 38: File Reader API
 ====
 
+## Daily Plan
+- Notes:
+    - Anything top of mind
+    - Reminder: 1215p Guest Lectures in the Event Space
+        - Weds: Judy Vu: TypeScript
+        - Thurs: Gavin Thomas: React Native
+
+- Code Review
+- Passing of the Projector Ceremonies!
+
+![magic](http://www.reactiongifs.com/r/mgc.gif)
+
+- File Reader API
+- Adding profiles and settings to your users!
+- Lab Preview
+
 ## Learning Objectives
-* Students will learn to use the `FileReader` API to preview image files 
+* Students will learn to use the `FileReader` API to preview image files
 
 ## Readings
 * Read [Using files in web applications](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications)
