@@ -1,0 +1,37 @@
+{
+  "config": {
+    "target": "http://localhost:3000",
+    "phases": [
+      {
+        "duration": 3,
+        "arrivalRate": 1
+      },
+      {
+        "duration": 5,
+        "arrivalRate": 10
+      }
+    ]
+    ,
+    "processor" : "./load-test-create-user.js"
+  },
+  "scenarios": [
+    {
+      "name" : "Create Users",
+      "flow": [
+        {
+          "function": "create"
+        },
+        {
+          "post": {
+            "url": "/signup",
+            "json": {
+              "username": "{{ username }}",
+              "email": " {{ email }}",
+              "password": "{{ password }}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
